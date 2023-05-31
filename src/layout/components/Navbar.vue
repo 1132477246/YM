@@ -9,11 +9,11 @@
       </div>
       <div class="navlist">
         <ul>
-          <li><a href="">首页</a></li>
-          <li><a href="">解决方案</a></li>
+          <li v-for="item in navlist" :key="item.id"><a href="" @click.prevent="handleOpen(item)">{{ item.title }}</a></li>
+          <!-- <li><a href="">解决方案</a></li>
           <li><a href="">产品介绍</a></li>
           <li><a href="">新闻资讯</a></li>
-          <li><a href="">关于我们</a></li>
+          <li><a href="">关于我们</a></li> -->
         </ul>
       </div>
     </div>
@@ -25,7 +25,19 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      navlist: [
+        { id: '0', title: '首页', path: '/' },
+        { id: '1', title: '解决方案', path: '' },
+        { id: '2', title: '产品介绍', path: '' },
+        { id: '3', title: '新闻资讯', path: '/news/index' },
+        { id: '4', title: '关于我们', path: '' }
+      ]
+    }
+  },
+  methods: {
+    handleOpen(item) {
+      this.$router.push(item.path)
     }
   }
 }

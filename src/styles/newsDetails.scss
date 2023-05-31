@@ -1,0 +1,93 @@
+.newdetails{
+    margin-top:100px;
+    .details_header{
+        width: 100%;
+        height: 993px;
+        background: #f2f4f7;
+        box-shadow: 0px -1px 0px 0px #d8dfe9;
+        padding: 48px 178px;
+        .details_top{
+            display: flex;
+            align-items: center;
+            img{
+                width: 32px;
+                height: 32px;
+            }
+            .details_back{
+                margin-left:10px;
+                width: 96px;
+                height: 36px;
+                // background: #1d2129;
+                font-size: 24px;
+                font-family: Poppins, Poppins-Regular;
+                font-weight: 400;
+                text-align: LEFT;
+                color: #1d2129;
+                line-height: 36px;
+            }
+            .details_title{
+                // width: 880px;
+                height: 66px;
+                // background: #1d2129;
+                font-size: 44px;
+                font-family: Poppins, Poppins-Bold;
+                font-weight: 700;
+                text-align: LEFT;
+                color: #1d2129;
+                line-height: 66px;
+                margin-left: 48px;
+            }
+
+        }
+        .details_img{
+            width: 1564px;
+            height: 751px;
+            margin-top:48px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+        }
+    }
+    .details_mid{
+        margin:80px 178px;
+        .mid_top{
+            display: flex;
+            align-items: center;
+            img{
+                width:48px;
+                height: 48px;
+            }
+            span{
+                width: 156px;
+                height: 60px;
+                // background: #86909c;
+                font-size: 24px;
+                font-family: Montserrat, Montserrat-SemiBold;
+                font-weight: normal;
+                text-align: CENTER;
+                color: #86909c;
+                line-height: 60px;
+                letter-spacing: 0.29px;
+            }
+        }
+        .mid_content{
+            width: 1564px;
+            min-height: 580px;
+            // background: #4e5969;
+            font-size: 20px;
+            font-family: Poppins, Poppins-Regular;
+            font-weight: 400;
+            text-align: LEFT;
+            color: #4e5969;
+            line-height: 40px;
+            margin-top:32px;
+        }
+    }
+    .details_bottom{
+        width:100%;
+        height: 352px;
+        background: $bgcolor;
+    }
+}
