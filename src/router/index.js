@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import Layout from '@/layout'
 Vue.use(Router)
 
+import newsRouter from './modules/news'
+
 export default new Router({
   routes: [
     {
@@ -18,7 +20,21 @@ export default new Router({
           meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
         }
       ]
-    }
+    },
+    newsRouter
+    // {
+    //   path: '/news',
+    //   component: Layout,
+    //   redirect: '/news/index',
+    //   children: [
+    //     {
+    //       path: 'index',
+    //       component: () => import('@/views/newsInfo/index'),
+    //       name: 'newsIndex',
+    //       meta: { title: 'newsIndex', icon: 'newsIndex' }
+    //     }
+    //   ]
+    // }
 
   ]
 })
