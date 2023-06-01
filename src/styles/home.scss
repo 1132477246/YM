@@ -20,6 +20,38 @@
     margin: 0 auto;
 }
 
+.titleBox {
+
+
+    margin: 0 auto;
+
+    margin-bottom: 80px;
+    text-align: center;
+    line-height: 52px;
+
+    .titleFrist {
+        height: 52px;
+        font-size: 44px;
+        font-family: Poppins, Poppins-Bold;
+        font-weight: 700;
+        color: #1d2129;
+        letter-spacing: 0rem;
+
+    }
+
+    .titleTow {
+        height: 52px;
+        font-size: 32px;
+        font-family: Poppins, Poppins-Regular;
+        font-weight: 400;
+        color: #d8dfe9;
+
+    }
+
+
+
+}
+
 .homeContent {
 
     // background: #D8DFE9;
@@ -38,37 +70,7 @@
     }
 
 
-    .titleBox {
-
-
-        margin: 0 auto;
-
-        margin-bottom: 80px;
-        text-align: center;
-        line-height: 52px;
-
-        .titleFrist {
-            height: 52px;
-            font-size: 44px;
-            font-family: Poppins, Poppins-Bold;
-            font-weight: 700;
-            color: #1d2129;
-            letter-spacing: 0rem;
-
-        }
-
-        .titleTow {
-            height: 52px;
-            font-size: 32px;
-            font-family: Poppins, Poppins-Regular;
-            font-weight: 400;
-            color: #d8dfe9;
-
-        }
-
-
-
-    }
+    
 
 
     .solutionBox {

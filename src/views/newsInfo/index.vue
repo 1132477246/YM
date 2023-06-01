@@ -1,7 +1,7 @@
 <template>
   <div class="newsInfo">
     <!-- <div class="news_header"> -->
-    <img src="@/assets/news/首图@2x.png" alt="">
+    <img src="@/assets/news/newsBanner.png" alt="">
     <!-- </div> -->
 
     <div class="news_content">
@@ -29,7 +29,6 @@
       background
       layout="prev, pager, next"
       :total="total"
-      style=""
     />
   </div>
 </template>
@@ -44,35 +43,35 @@ export default {
         { id: 0,
           title: '今日扬铭科技获得一亿元融资',
           describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/news/人工智能解决方案.png'),
+          img: require('@/assets/news/newsInfo.png'),
           time: '06.01/2023',
           icon: require('@/assets/news/time_5@2x.png')
         },
         { id: 1,
           title: '今日扬铭科技获得一亿元融资',
           describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/news/人工智能解决方案.png'),
+          img: require('@/assets/news/newsInfo.png'),
           time: '06.01/2023',
           icon: require('@/assets/news/time_5@2x.png')
         },
         { id: 2,
           title: '今日扬铭科技获得一亿元融资',
           describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/news/人工智能解决方案.png'),
+          img: require('@/assets/news/newsInfo.png'),
           time: '06.01/2023',
           icon: require('@/assets/news/time_5@2x.png')
         },
         { id: 3,
           title: '今日扬铭科技获得一亿元融资',
           describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/news/人工智能解决方案.png'),
+          img: require('@/assets/news/newsInfo.png'),
           time: '06.01/2023',
           icon: require('@/assets/news/time_5@2x.png')
         },
         { id: 4,
           title: '今日扬铭科技获得一亿元融资',
           describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/news/人工智能解决方案.png'),
+          img: require('@/assets/news/newsInfo.png'),
           time: '06.01/2023',
           icon: require('@/assets/news/time_5@2x.png')
         }

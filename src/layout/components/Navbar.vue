@@ -29,7 +29,7 @@ export default {
       navlist: [
         { id: '0', title: '首页', path: '/' },
         { id: '1', title: '解决方案', path: '' },
-        { id: '2', title: '产品介绍', path: '' },
+        { id: '2', title: '产品介绍', path: '/products/index' },
         { id: '3', title: '新闻资讯', path: '/news/index' },
         { id: '4', title: '关于我们', path: '' }
       ]
