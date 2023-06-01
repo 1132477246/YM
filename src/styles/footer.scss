@@ -1,10 +1,152 @@
-.footerBox{
+
+// .footerBox{
+//     width: 100%;
+// min-height: 352px;
+// background: linear-gradient(73deg,#011340 100%, #000d2d 100%);
+// padding: 80px 0px;
+
+.footerBox {
+    position: relative;
     width: 100%;
-min-height: 352px;
-background: linear-gradient(73deg,#011340 100%, #000d2d 100%);
-padding: 80px 0px;
+    min-height: 352px;
+    background: linear-gradient(247deg, $bgcolor 0%, $--color-linear-primary 0%);
+    padding: 80px 0px;
+    // background-image: url(../../public/img/footer.png) ;
 
-    
+    .footerBox_bgImg {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    }
 
+    .footerContentBox {
+        display: flex;
+
+        .footerFlex {
+            display: flex;
+
+            .footerUlBox:first-child {
+                width: 248px;
+                text-align: left;
+            }
+
+            .footerUlBox {
+                .textCenter {
+                    width: 128px;
+                    margin: 0 auto;
+                }
+
+                width: 336px;
+                height: 196px;
+                border-right: 1px solid rgba(255, 255, 255, 0.20);
+
+                ul {
+                    li:first-child {
+                        height: 36px;
+                        font-size: 24px;
+                        font-family: Poppins, Poppins-Medium;
+                        font-weight: 500;
+
+                        color: #ffffff;
+                        line-height: 36px;
+
+                    }
+
+                    li {
+                        margin-bottom: 16px;
+
+
+                        height: 24px;
+
+                        font-size: 16px;
+                        font-family: Poppins, Poppins-Medium;
+                        font-weight: 500;
+                        text-align: LEFT;
+                        color: rgba(255, 255, 255, 0.60);
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+
+        .contact {
+            padding-left: 210px;
+            display: flex;
+
+            .wx {
+                margin-right: 80px;
+            }
+
+            .wx div:first-child {
+                margin-bottom: 13.6px;
+                display: flex;
+
+                height: 24px;
+
+                font-size: 16px;
+                font-family: Poppins, Poppins-Medium;
+                font-weight: 500;
+                color: #ffffff;
+                line-height: 24px;
+                align-items: center;
+
+                .icon {
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 4px;
+                    background: #ffffff;
+                }
+            }
+
+            .wx div:last-child {
+                width: 120px;
+                height: 120px;
+
+                .wxImg {
+                    width: 100%;
+                    height: 100%;
+                    background: #ffffff;
+                }
+            }
+
+
+            .ContactInformation {
+                // width: 206px;
+
+                .ContactInformation_ul {
+                    li:first-child {
+                        height: 36px;
+                        font-size: 24px;
+                        font-family: Poppins, Poppins-Medium;
+                        font-weight: 500;
+
+                        color: #ffffff;
+                        line-height: 36px;
+
+                    }
+
+                    li {
+                        height: 30px;
+                        font-size: 12px;
+                        font-family: Montserrat, Montserrat-SemiBold;
+                        font-weight: normal;
+                        text-align: LEFT;
+                        color: #ffffff;
+                        line-height: 30px;
+                        letter-spacing: 0.14px;
+                        align-items: center;
+                        display: flex;
+                        // width: 206px;
+
+                        img {
+                            width: 16px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
 
 }

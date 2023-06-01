@@ -29,7 +29,7 @@ export default {
         // width: 1919px;
         height: 720px;
         background: #f2f4f7;
-        background-image: url(require('@/assets/news/newsBanner.png'));
+        // background-image: url(require('@/assets/news/newsBanner.png'));
         margin-bottom: 160px;
         div{
             width: 384px;
