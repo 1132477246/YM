@@ -2,7 +2,7 @@
   <div class="homeContent">
     <div class="banner">
       <!-- <img src="@/assets/img/banner.png" alt=""> -->
-      <el-carousel height="720px">
+      <el-carousel>
         <el-carousel-item v-for="item in bannerObj" :key="item.id">
           <img :src="item.img" alt="">
         </el-carousel-item>
@@ -48,7 +48,7 @@
         <Title :title-arry="['产品介绍', 'Product Introduction']" />
         <div class="productBoxLi">
           <ul>
-            <li v-for="item in productObj" :key="item.id">
+            <li v-for="item in productObj" :key="item.id" :class="Number(bannerId)===Number(item.id)?'active':'2'">
               <img :src="item.img" alt="">
               <div class="listTitle">{{ item.title }}</div>
               <div class="listUnderline" />
@@ -59,9 +59,9 @@
 
       <div class="productBoxContent">
         <div class="textBox">
-          <div class="title">卫星信号分析</div>
+          <div class="title">{{ productContent.title }}</div>
           <div class="content">
-            通过分析多路径效应可知，BDS-3卫星各个信号中不存在与高度角有关的系统偏差。BDS-3最简系统卫星观测数据质量与GPSL1/L5和GalileoE1/E5a相当，能够满足北斗卫
+            {{ productContent.content }}
           </div>
           <div class="characteristic">
             <div class="characteristic_title_box">
@@ -70,9 +70,10 @@
             </div>
             <div class="characteristic_label">
               <ul class="characteristic_label_ul">
-                <li>精确几乎无失误</li>
+                <li v-for="item in productContent.label " :key="item.id">{{ item }}</li>
+                <!-- <li>精确几乎无失误</li>
                 <li>产品特点最多十个字</li>
-                <li>边框宽距文字24px</li>
+                <li>边框宽距文字24px</li> -->
               </ul>
             </div>
           </div>
@@ -190,6 +191,9 @@ export default {
         {
           id: '3',
           img: require('@/assets/img/productImg.png')
+        }, {
+          id: '4',
+          img: require('@/assets/img/productImg.png')
         }
       ],
       productObj: [
@@ -214,6 +218,35 @@ export default {
           img: require('@/assets/img/product_ai.png')
         }
       ],
+      productObjContent: [
+        {
+          id: '1',
+          title: '卫星信号分析',
+          content: '1通过分析多路径效应可知，BDS-3卫星各个信号中不存在与高度角有关的系统偏差。BDS-3最简系统卫星观测数据质量与GPSL1/L5和GalileoE1/E5a相当，能够满足北斗卫',
+          label: ['精确几乎无失误', '产品特点最多十个字', '边框宽距文字24px']
+
+        }, {
+          id: '2',
+          title: '通信信号分析',
+          content: '2通过分析多路径效应可知，BDS-3卫星各个信号中不存在与高度角有关的系统偏差。BDS-3最简系统卫星观测数据质量与GPSL1/L5和GalileoE1/E5a相当，能够满足北斗卫',
+          label: ['精确几乎无失误', '产品特点最多十个字', '边框宽距文字24px']
+
+        }, {
+          id: '3',
+          title: '训练系统',
+          content: '3通过分析多路径效应可知，BDS-3卫星各个信号中不存在与高度角有关的系统偏差。BDS-3最简系统卫星观测数据质量与GPSL1/L5和GalileoE1/E5a相当，能够满足北斗卫',
+          label: ['精确几乎无失误', '产品特点最多十个字', '边框宽距文字24px']
+
+        }, {
+          id: '4',
+          title: 'Al开发平台',
+          content: '4通过分析多路径效应可知，BDS-3卫星各个信号中不存在与高度角有关的系统偏差。BDS-3最简系统卫星观测数据质量与GPSL1/L5和GalileoE1/E5a相当，能够满足北斗卫',
+          label: ['精确几乎无失误', '产品特点最多十个字', '边框宽距文字24px']
+
+        }
+
+      ],
+      productContent: '',
       newBox: [
         {
           img: require('@/assets/img/solutionThree.png'),
@@ -248,7 +281,9 @@ export default {
         }
       ],
       newBoxOne: [],
-      newBoxTow: []
+      newBoxTow: [],
+      bannerId: ''
+
     }
   },
   created() {
@@ -258,6 +293,8 @@ export default {
   methods: {
     bannerChange(val) {
       console.warn(val)
+      this.bannerId = val + 1
+      this.productContent = this.productObjContent[val]
     }
   }
 }

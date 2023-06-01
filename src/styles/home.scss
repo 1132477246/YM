@@ -15,6 +15,7 @@
 //         width:$mainWidth
 //     }
 // }
+
 .container {
     width: $mainWidth;
     margin: 0 auto;
@@ -26,6 +27,12 @@
 
 
     .banner {
+        .el-carousel{
+            height: 720px !important;
+            .el-carousel__container{
+                height: 100%;
+            }
+        }
         // width: 100%;
         // height: 51.43rem;
         margin-top: 100px;
@@ -78,6 +85,27 @@
             display: flex;
             margin: 0 auto;
 
+            // .solutionBoxList:hover  .deails {
+            //     background-color: $bgcolor;
+            //     cursor: pointer;
+            //     color: #ffffff;
+               
+            // }
+            .solutionBoxList:hover{
+                transform: translateY(-10px);
+                transition:  0.1s;
+                transition-timing-function: ease-in-out;
+                cursor: pointer;
+                box-shadow: 0px 0px 60px 0px rgba(25,90,148,0.15); 
+                .deails {
+                    background-color: $bgcolor;
+                   
+                    color: #ffffff;
+                   
+                }
+
+            }
+
             .solutionBoxList {
                 width: 500px;
                 margin-right: 32px;
@@ -127,11 +155,7 @@
                     }
                 }
 
-                .deails:hover {
-                    background-color: $bgcolor;
-                    cursor: pointer;
-                    color: #ffffff;
-                }
+               
 
                 .deails {
 
@@ -200,15 +224,19 @@
                 font-family: Inter, Inter-Regular;
                 font-weight: 400;
 
-                color: $color;
+               
                 line-height: 31px;
                 margin-bottom: 68px;
             }
-
+            .active{
+                color: $color;
+                .listUnderline {
+                    background: $bgcolor;
+                }
+            }
             .listUnderline {
                 width: 126px;
                 height: 2px;
-                background: $bgcolor;
 
                 margin: 0 auto;
             }
@@ -314,6 +342,12 @@
         }
 
         .productImgBox {
+            .el-carousel{
+                height: 512px !important;
+                .el-carousel__container{
+                    height: 100%;
+                }
+            }
             width: 960px;
 
             .el-carousel__arrow--left {
@@ -326,9 +360,7 @@
                 display: none !important;
             }
 
-            .el-carousel__container {
-                height: 512px;
-            }
+           
 
             .productImgBox_img {
                 width: 100%;

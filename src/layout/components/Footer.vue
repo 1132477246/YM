@@ -1,7 +1,7 @@
 <template>
 
   <div class="footerBox">
-    <img src="@/assets/img/footer.png" alt="">
+    <img class="footerBox_bgImg" src="@/assets/img/footer.png" alt="">
     <div class="container footerContentBox">
       <div class="footerFlex">
         <div class="footerUlBox">
@@ -25,12 +25,25 @@
 
       </div>
       <div class="contact">
-        <div>
-          <div />
-          <div />
+        <div class="wx">
+          <div>
+            <img class="icon" src="" alt="">
+            关注官方微信
+          </div>
+          <div>
+            <img class="wxImg" src="" alt="">
+          </div>
         </div>
 
-        <div />
+        <div class="ContactInformation">
+          <ul class="ContactInformation_ul">
+            <li v-for=" item in footerObj.contact" :key="item.index">
+              <img v-if="item.img" :src="item.img" alt="">
+              {{ item.name }}
+            </li>
+
+          </ul>
+        </div>
       </div>
 
     </div>
