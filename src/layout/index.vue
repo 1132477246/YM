@@ -2,17 +2,19 @@
   <div class="app-wrapper">
     <Navbar />
     <app-main />
+    <Footer />
   </div>
 </template>
 
 <script>
 
-import { Navbar, AppMain } from './components'
+import { Navbar, AppMain, Footer } from './components'
 export default {
   name: 'HelloWorld',
   components: {
     Navbar,
-    AppMain
+    AppMain,
+    Footer
   },
   data() {
     return {
@@ -23,7 +25,7 @@ export default {
 </script>
 
 <style>
-.el-carousel__item h3 {
+/* .el-carousel__item h3 {
   color: #475669;
   font-size: 18px;
   opacity: 0.75;
@@ -37,5 +39,5 @@ export default {
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
-}
+} */
 </style>
