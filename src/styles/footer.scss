@@ -16,8 +16,9 @@
         display: flex;
 
         .footerFlex {
+            margin-right: 5px;
             display: flex;
-
+                flex: 0 0 908px;
             .footerUlBox:first-child {
                 width: 248px;
                 text-align: left;
@@ -34,6 +35,10 @@
                 border-right: 1px solid rgba(255, 255, 255, 0.20);
 
                 ul {
+                    height: 100%;
+                    justify-content: space-between;
+                    display: flex;
+                    flex-direction: column;
                     li:first-child {
                         height: 36px;
                         font-size: 24px;
@@ -48,7 +53,7 @@
                     li {
                         margin-bottom: 16px;
 
-
+                        white-space: nowrap;
                         height: 24px;
 
                         font-size: 16px;
@@ -63,9 +68,10 @@
         }
 
         .contact {
-            padding-left: 210px;
+            flex: 1;
+         
             display: flex;
-
+            justify-content: end;
             .wx {
                 margin-right: 80px;
             }
@@ -73,7 +79,7 @@
             .wx div:first-child {
                 margin-bottom: 13.6px;
                 display: flex;
-
+                white-space:nowrap;
                 height: 24px;
 
                 font-size: 16px;
@@ -107,6 +113,10 @@
                 // width: 206px;
 
                 .ContactInformation_ul {
+                    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
                     li:first-child {
                         height: 36px;
                         font-size: 24px;
@@ -119,6 +129,7 @@
                     }
 
                     li {
+                        white-space:nowrap;
                         height: 30px;
                         font-size: 12px;
                         font-family: Montserrat, Montserrat-SemiBold;

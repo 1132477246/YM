@@ -31,7 +31,7 @@
             关注官方微信
           </div>
           <div>
-            <img class="wxImg" src="" alt="">
+            <img class="wxImg" src="@/assets/img/wx.png" alt="">
           </div>
         </div>
 
