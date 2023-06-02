@@ -14,6 +14,8 @@ import App from './App'
 // import store from './store'
 import router from './router'
 
+import BaiduMap from 'vue-baidu-map'
+
 // import './icons' // icon
 // import './permission' // permission control
 // import './utils/error-log' // error log
@@ -35,6 +37,10 @@ if (process.env.NODE_ENV === 'production') {
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
+})
+
+Vue.use(BaiduMap, {
+  ak: 'K6RuD91GxkoGBmrR3KH3sAH3eLRIFO10'
 })
 
 // register global utility filters

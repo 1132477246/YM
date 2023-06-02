@@ -7,7 +7,9 @@
       "default",
       {
         "ignore": [
-          "flex"
+          "flex",
+          "flex-direction",
+          "backdrop-filter"
         ]
       }
     ]

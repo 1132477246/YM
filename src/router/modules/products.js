@@ -18,12 +18,6 @@ const productsRouter = {
       name: 'productsIndex',
       meta: { title: '产品介绍' }
     }
-    // {
-    //   path: 'details',
-    //   component: () => import('@/views/newsInfo/components/newsDetails'),
-    //   name: 'newsDetails',
-    //   meta: { title: '新闻详情' }
-    // }
   ]
 }
 export default productsRouter

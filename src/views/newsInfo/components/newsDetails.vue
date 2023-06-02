@@ -4,7 +4,7 @@
       <div class="details_top">
         <!-- <div class=""> -->
         <img src="@/assets/news/icon_left-small@2x.png" alt="" @click="goback">
-        <span class="details_back">全部新闻</span>
+        <span class="details_back">{{ title }}</span>
         <!-- </div> -->
         <div class="details_title">{{ details.title }}</div>
       </div>
@@ -26,8 +26,10 @@
 
 <script>
 export default {
+  name: 'NewsDetails',
   data() {
     return {
+      title: '全部新闻',
       details: {
         title: '今日扬铭科技获得一亿元融资获得一亿元融资',
         img: require('@/assets/news/newsInfo.png'),
