@@ -1,7 +1,7 @@
 <template>
   <div class="titleBox ">
     <div class="titleFrist">{{ titleArry[0] }}</div>
-    <div class="titleTow">{{ titleArry[1] }}</div>
+    <div class="titleTow" :class="isRow?'classPadding':''">{{ titleArry[1] }}</div>
   </div>
 
 </template>
@@ -15,6 +15,10 @@ export default {
       default: () => {
         return []
       }
+    },
+    isRow: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

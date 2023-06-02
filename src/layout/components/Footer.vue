@@ -18,8 +18,7 @@
         </div>
         <div class="footerUlBox">
           <ul class="textCenter">
-            <li v-for=" item in footerObj.new" :key="item.index">{{ item.name }}</li>
-
+            <li v-for=" item in footerObj.new" :key="item.index" @click="toPage">{{ item.name }}</li>
           </ul>
         </div>
 
@@ -127,6 +126,11 @@ export default {
         ]
       }
 
+    }
+  },
+  methods: {
+    toPage() {
+      console.log(1)
     }
   }
 }

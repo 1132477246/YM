@@ -5,6 +5,11 @@ import Layout from '@/layout'
 Vue.use(Router)
 
 import newsRouter from './modules/news'
+import productsRouter from './modules/products'
+import aboutRouter from './modules/about'
+import solutionRouter from './modules/solution'
+import partnersRouter from './modules/partners'
+import contactRouter from './modules/contact'
 
 export default new Router({
   routes: [
@@ -21,7 +26,12 @@ export default new Router({
         }
       ]
     },
-    newsRouter
+    newsRouter,
+    productsRouter,
+    aboutRouter,
+    solutionRouter,
+    partnersRouter,
+    contactRouter
     // {
     //   path: '/news',
     //   component: Layout,
