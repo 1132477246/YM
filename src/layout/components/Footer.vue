@@ -6,19 +6,25 @@
       <div class="footerFlex">
         <div class="footerUlBox">
           <ul>
-            <li v-for=" item in footerObj.solution" :key="item.index">{{ item.name }}</li>
+            <li v-for=" item in footerObj.solution" :key="item.index" @click.prevent="handleOpen(item)">
+              <a href="">{{ item.name }}</a>
+            </li>
 
           </ul>
         </div>
         <div class="footerUlBox">
           <ul class="textCenter">
-            <li v-for=" item in footerObj.product" :key="item.index">{{ item.name }}</li>
+            <li v-for=" item in footerObj.product" :key="item.index" @click.prevent="handleOpen(item)">
+              <a href="">{{ item.name }}</a>
+            </li>
 
           </ul>
         </div>
         <div class="footerUlBox">
           <ul class="textCenter">
-            <li v-for=" item in footerObj.new" :key="item.index" @click="toPage">{{ item.name }}</li>
+            <li v-for=" item in footerObj.new" :key="item.index" @click.prevent="handleOpen(item)">
+              <a href="">{{ item.name }}</a>
+            </li>
           </ul>
         </div>
 
@@ -129,8 +135,8 @@ export default {
     }
   },
   methods: {
-    toPage() {
-      console.log(1)
+    handleOpen(url) {
+      console.log(url)
     }
   }
 }
