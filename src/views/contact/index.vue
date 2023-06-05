@@ -1,38 +1,82 @@
 <template>
-  <div class="contact">
-    <div class="contact_header">
+  <div class="contactus">
+    <div class="contactus_header">
       <img src="@/assets/contact/banner.png" alt="">
     </div>
 
     <Title :title-arry="['联系我们','Contact Us']" />
 
-    <div class="contact_mid">
-      <div class="mid_list">
+    <div class="contactus_mid">
+      <div v-for="item in companys" :key="item.id" class="mid_list">
         <div class="mid_left">
-          <h2>北京扬铭科技发展有限责任公司</h2>
+          <h2>{{ item.title }}</h2>
           <div class="left_text">
-            <p><img src="@/assets/contact/call@2x.png"><span>010-88888888</span></p>
-            <p><img src="@/assets/contact/email_2@2x.png"><span>15936299999@163.com</span></p>
-            <p><img src="@/assets/contact/address@2x.png"><span>北京市海淀区安宁庄东路2号楼710</span></p>
+            <p><img src="@/assets/contact/call@2x.png"><span>{{ item.tel }}</span></p>
+            <p><img src="@/assets/contact/email_2@2x.png"><span>{{ item.email }}</span></p>
+            <p><img src="@/assets/contact/address@2x.png"><span>{{ item.address }}</span></p>
           </div>
         </div>
-        <div id="container" class="mid_right" />
-      </div>
-      <div class="mid_list grid">
-        <div class="mid_left">
-          <h2>北京扬铭科技发展有限责任公司无锡分公司</h2>
-          <div class="left_text">
-            <p><img src="@/assets/contact/call@2x.png"><span>010-88888888</span></p>
-            <p><img src="@/assets/contact/email_2@2x.png"><span>15936299999@163.com</span></p>
-            <p><img src="@/assets/contact/address@2x.png"><span>无锡市滨湖区绣溪路58-9号二层202</span></p>
-          </div>
+        <div>
+          <baidu-map
+            class="mid_right"
+            ak="K6RuD91GxkoGBmrR3KH3sAH3eLRIFO10"
+            :center="item.center"
+            :zoom="item.zoom"
+            :scroll-wheel-zoom="true"
+            map-type="BMAP_NORMAL_MAP"
+            :max-zoom="item.maxZoom"
+            :min-zoom="item.minZoom"
+          >
+            <bm-marker :position="item.position" :dragging="true" animation="BMAP_ANIMATION_BOUNCE" />
+          </baidu-map>
         </div>
-        <div class="mid_right" />
       </div>
 
     </div>
 
     <Title :title-arry="['在线留言','Online Message']" />
+
+    <div class="contactus_bot">
+      <div class="bot_top">
+        <el-form :model="dataForm">
+          <el-row :gutter="20">
+            <el-col :span="8">
+              <el-form-item label="姓名" prop="name">
+                <div class="content">
+                  <img src="@/assets/contact/Frame@2x.png" alt="">
+                  <el-input v-model="dataForm.name" size="medium" placeholder="请留下您的姓名" />
+                </div>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <div class="content">
+                <el-form-item label="电话" prop="tel">
+                  <img src="@/assets/contact/Frame_1@2x.png" alt="">
+                  <el-input v-model="dataForm.tel" placeholder="18501111111" />
+                </el-form-item>
+              </div>
+            </el-col>
+            <el-col :span="8">
+              <div class="content">
+                <el-form-item label="邮箱" prop="email">
+                  <img src="@/assets/contact/email_2@2x.png" alt="">
+                  <el-input v-model="dataForm.email" placeholder="请留下您的邮箱" />
+                </el-form-item>
+              </div>
+            </el-col>
+          </el-row>
+          <div class="content">
+            <el-form-item label="意见反馈" prop="remark">
+              <img class="remark" src="@/assets/contact/Frame_2@2x.png" alt="">
+              <el-input v-model="dataForm.remark" type="textarea" :rows="10" placeholder="请输入您想说的..." />
+            </el-form-item>
+          </div>
+        </el-form>
+        <p>{{ notice }}</p>
+        <div class="bot_btn">立即提交</div>
+
+      </div>
+    </div>
 
   </div>
 </template>
@@ -40,93 +84,49 @@
 <script>
 import Title from '@/components/title'
 
+import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
+
 export default {
-  components: { Title },
+  components: { Title, BaiduMap },
   data() {
-    return {}
-  },
-  mounted() {
+    return {
+      companys: [
+        { id: 1, title: '北京扬铭科技发展有限责任公司',
+          address: '北京市海淀区安宁庄东路2号楼710',
+          email: '15936299999@163.com',
+          tel: '010-88888888',
+          center: { lng: 116.331924, lat: 40.05695 }, // 中心位
+          position: { lng: 116.331727, lat: 40.056954 }, // 位置点
+          zoom: 100,
+          maxZoom: 80,
+          minZoom: 10
+
+        },
+        { id: 2, title: '北京扬铭科技发展有限责任公司无锡分公司',
+          address: '无锡市滨湖区绣溪路58-9号二层202',
+          email: '15936299999@163.com',
+          tel: '010-88888888',
+          center: { lng: 120.276926, lat: 31.478934 },
+          position: { lng: 120.276361, lat: 31.47895 }, // 位置点
+          zoom: 100,
+          maxZoom: 80,
+          minZoom: 10
+
+        }
+      ],
+      map: null,
+      dataForm: {
+        name: '',
+        tel: '',
+        email: '',
+        remark: ''
+      },
+      notice: '请填写以上信息，我们将尽快安排专业人员与您沟通，帮助您快速制定解决方案。'
+    }
   },
   methods: {
-    initMap() {
-    //   const map = new BMapGL.Map('container')
-    }
+
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.contact{
-    margin-top:100px;
-    margin-bottom: 160px;
-    .contact_header{
-        width: 100%;
-        height: 720px;
-        margin-bottom: 160px;
-        img{
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
-        }
-    }
-    .contact_mid{
-        margin:80px 178px 0px;
-        .grid{
-            margin-top: 32px;
-        }
-        .mid_list{
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 1565px;
-            height: 450px;
-            background: #ffffff;
-            border: 1px solid #d8dfe9;
-            .mid_left{
-                padding: 80px 80px 0 80px;
-                h2{
-                    // width: 490px;
-                    // height: 48px;
-                    font-size: 32px;
-                    font-family: Poppins, Poppins-Bold;
-                    font-weight: 700;
-                    text-align: LEFT;
-                    color: #1d2129;
-                    line-height: 48px;
-                    letter-spacing: 0.32px;
-                }
-                .left_text{
-                    margin-top: 80px;
-                    p{
-                        display: flex;
-                        align-items: center;
-                        img{
-                            width: 32px;
-                            height: 32px;
-                        }
-                        span{
-                            // width: 226px;
-                            // height: 60px;
-                            // background: #4e5969;
-                            margin-left: 16px;
-                            padding:14px 0;
-                            font-size: 26px;
-                            font-family: Montserrat, Montserrat-SemiBold;
-                            font-weight: normal;
-                            text-align: LEFT;
-                            color: #4e5969;
-                            // line-height: 60px;
-                            letter-spacing: 0.31px;
-                        }
-                    }
-                }
-            }
-            .mid_right{
-                width: 915px;
-                height: 450px;
-            }
-        }
-
-    }
-}
-</style>

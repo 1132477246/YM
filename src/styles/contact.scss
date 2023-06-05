@@ -1,0 +1,160 @@
+.contactus{
+    margin-top:100px;
+    margin-bottom: 160px;
+    .contactus_header{
+        width: 100%;
+        height: 720px;
+        margin-bottom: 160px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+    }
+    .contactus_mid{
+        margin:80px 178px 160px;
+        .grid{
+            margin-top: 32px;
+        }
+        .mid_list{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 1565px;
+            height: 450px;
+            background: #ffffff;
+            border: 1px solid #d8dfe9;
+            margin-bottom: 32px;
+            .mid_left{
+                padding: 80px;
+                h2{
+                    // width: 490px;
+                    // height: 48px;
+                    font-size: 32px;
+                    font-family: Poppins, Poppins-Bold;
+                    font-weight: 700;
+                    text-align: LEFT;
+                    color: #1d2129;
+                    line-height: 48px;
+                    letter-spacing: 0.32px;
+                }
+                .left_text{
+                    margin-top: 80px;
+                    p{
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 32px;
+                            height: 32px;
+                        }
+                        span{
+                            // width: 226px;
+                            // height: 60px;
+                            // background: #4e5969;
+                            margin-left: 16px;
+                            padding:14px 0;
+                            font-size: 26px;
+                            font-family: Montserrat, Montserrat-SemiBold;
+                            font-weight: normal;
+                            text-align: LEFT;
+                            color: #4e5969;
+                            // line-height: 60px;
+                            letter-spacing: 0.31px;
+                        }
+                    }
+                }
+            }
+            .mid_right{
+                width: 915px;
+                height: 450px;
+            }
+        }
+
+    }
+    .contactus_bot{
+      margin:80px 178px 0;
+      .el-form-item--medium .el-form-item__label{
+        // width: 48px;
+        // height: 36px;
+        font-size: 24px;
+        font-family: Poppins, Poppins-Regular;
+        font-weight: 400;
+        text-align: left;
+        color: #1d2129;
+        line-height: 36px;
+      }
+      .content{
+          position: relative;
+        img{
+          width: 24px;
+          height: 24px;
+          position: absolute;
+          top:62%;
+          left: 16px;
+          z-index: 5;
+        }
+        .remark{
+          position: absolute;
+          top: 14%;
+          left: 16px;
+        }
+        .el-input{
+          background: #ffffff;
+          border: 1.5px solid #d8dfe9;
+          border-radius: 3px;
+          margin-top:12px;
+        }
+        .el-input--medium .el-input__inner{
+          height: 50px;
+          padding-left:48px;
+          line-height: 50px;
+          font-size: 22px;
+          font-family: Roboto, Roboto-Regular;
+          font-weight: 400;
+          text-align: LEFT;
+          color: #afb9c4;
+        }
+        .el-textarea{
+          background: #ffffff;
+          border: 1.5px solid #d8dfe9;
+          border-radius: 3px;
+          margin-top: 12px;
+        }
+        .el-textarea__inner{
+          padding-left:48px;
+          font-size: 22px;
+          font-family: Roboto, Roboto-Regular;
+          font-weight: 400;
+          text-align: LEFT;
+          color: #afb9c4;
+        }
+      }
+      p{
+        margin-top: 80px;
+        height: 33px;
+        font-size: 22px;
+        font-family: Poppins, Poppins-Medium;
+        font-weight: 500;
+        text-align: center;
+        color: #4e5969;
+        line-height: 33px;
+      }
+      .bot_btn{
+        width: 145px;
+        height: 50px;
+        line-height: 50px;
+        background: #165dff; //$bgcolor;
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: Poppins, Poppins-Regular;
+        font-weight: 400;
+        text-align: CENTER;
+        color: #ffffff;
+        margin:24px auto 0;
+      }
+      .bot_btn:hover{
+        cursor: pointer;
+      }
+    }
+
+}
