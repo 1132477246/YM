@@ -25,8 +25,8 @@
             <img :src="item.img" alt="">
           </div>
           <div class="contentBox">
-            <div class="title">{{ item.title }}</div>
-            <div class="content">
+            <div class="title oneHidden">{{ item.title }}</div>
+            <div class="content moreHidden moreHidden_3">
               {{ item.content }}
             </div>
           </div>
@@ -58,33 +58,31 @@
       </div>
 
       <div class="productBoxContent">
-        <div class="textBox">
-          <div class="title">{{ productContent.title }}</div>
-          <div class="content">
-            {{ productContent.content }}
-          </div>
-          <div class="characteristic">
-            <div class="characteristic_title_box">
-              <div class="characteristic_title_box_title">产品特点</div>
-              <div class="br" />
-            </div>
-            <div class="characteristic_label">
-              <ul class="characteristic_label_ul">
-                <li v-for="item in productContent.label " :key="item.id">{{ item }}</li>
-                <!-- <li>精确几乎无失误</li>
-                <li>产品特点最多十个字</li>
-                <li>边框宽距文字24px</li> -->
-              </ul>
-            </div>
-          </div>
-          <div class="productBoxContent_details">查看详情 ></div>
-        </div>
+
         <div class="productImgBox">
-          <el-carousel indicator-position="none" @change="bannerChange">
+          <el-carousel indicator-position="none" :interval="1000" :autoplay="false" @change="bannerChange">
             <el-carousel-item
               v-for="item in productImgBannerObj"
               :key="item.id"
             >
+              <div class="textBox">
+                <div class="title">{{ productContent.title }}</div>
+                <div class="content moreHidden moreHidden_4">
+                  {{ productContent.content }}
+                </div>
+                <div class="characteristic">
+                  <div class="characteristic_title_box">
+                    <div class="characteristic_title_box_title">产品特点</div>
+                    <div class="br" />
+                  </div>
+                  <div class="characteristic_label">
+                    <ul class="characteristic_label_ul">
+                      <li v-for="items in productContent.label " :key="items.id">{{ items }}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="productBoxContent_details">查看详情 ></div>
+              </div>
               <img :src="item.img" alt="" class="productImgBox_img">
             </el-carousel-item>
           </el-carousel>
@@ -101,8 +99,8 @@
               <img :src="item.img" alt="">
             </div>
             <div class="newBox_text_box">
-              <div class="newBox_title">{{ item.title }}</div>
-              <div class="newBox_mainText">{{ item.text }}</div>
+              <div class="newBox_title oneHidden">{{ item.title }}</div>
+              <div class="newBox_mainText moreHidden moreHidden_4">{{ item.text }}</div>
               <div class="newBox_time_box">
                 <img src="@/assets/img/time.png" alt="">
                 <div class="newBox_time"> {{ item.time }}</div>
@@ -115,7 +113,7 @@
           <li v-for="item in newBoxTow " :key="item.index" class="newBox_ul_li_tow">
             <div class="newBox_icon" />
             <div class="newBox_text_box_tow">
-              <div class="newBox_title_tow">{{ item.title }}</div>
+              <div class="newBox_title_tow oneHidden">{{ item.title }}</div>
 
               <div class="newBox_time_box_tow">
                 <img src="@/assets/img/time.png" alt="">
@@ -125,10 +123,12 @@
           </li>
         </ul>
 
-        <div class="getAll">
+        <!-- <div class="getAll">
           查看全部
           <img src="@/assets/img/right.png">
-        </div>
+        </div> -->
+        <el-button class="getAll" type="primary">查看全部  <img src="@/assets/img/right.png"></el-button>
+
       </div>
     </div>
 
@@ -182,18 +182,18 @@ export default {
       productImgBannerObj: [
         {
           id: '1',
-          img: require('@/assets/img/productImg.png')
+          img: require('@/assets/img/product_banner_wx.png')
         },
         {
           id: '2',
-          img: require('@/assets/img/productImg.png')
+          img: require('@/assets/img/product_banner_tx.png')
         },
         {
           id: '3',
-          img: require('@/assets/img/productImg.png')
+          img: require('@/assets/img/product_banner_xl.png')
         }, {
           id: '4',
-          img: require('@/assets/img/productImg.png')
+          img: require('@/assets/img/product_banner_ai.png')
         }
       ],
       productObj: [
@@ -249,12 +249,12 @@ export default {
       productContent: '',
       newBox: [
         {
-          img: require('@/assets/img/solutionThree.png'),
+          img: require('@/assets/img/new1.png'),
           title: '今日扬铭科技获得一亿元融资',
           text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
           time: '06.01/2023'
         }, {
-          img: require('@/assets/img/solutionThree.png'),
+          img: require('@/assets/img/new2.png'),
           title: '今日扬铭科技获得一亿元融资',
           text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
           time: '06.01/2023'
@@ -287,6 +287,7 @@ export default {
     }
   },
   created() {
+    this.bannerChange(0)
     this.newBoxOne = this.newBox.slice(0, 2)
     this.newBoxTow = this.newBox.slice(2)
   },
