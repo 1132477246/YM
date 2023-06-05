@@ -6,7 +6,7 @@
       </div>
       <div class="header_title">
         <h2>{{ title }}</h2>
-        <p>{{ introduce }}</p>
+        <p class="moreHidden">{{ introduce }}</p>
       </div>
     </div>
     <Title :title-arry="['产品简介', 'Product Introduction']" />
