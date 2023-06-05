@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <div class="productBoxContent">
+      <div class="productBoxContent" :style="{'--height': carouselHeight + 'px'}">
 
         <div class="productImgBox">
           <el-carousel indicator-position="none" :interval="1000" :autoplay="false" @change="bannerChange">
@@ -65,25 +65,29 @@
               v-for="item in productImgBannerObj"
               :key="item.id"
             >
-              <div class="textBox">
-                <div class="title">{{ productContent.title }}</div>
-                <div class="content moreHidden moreHidden_4">
-                  {{ productContent.content }}
-                </div>
-                <div class="characteristic">
-                  <div class="characteristic_title_box">
-                    <div class="characteristic_title_box_title">产品特点</div>
-                    <div class="br" />
+              <div class="product_container">
+                <div class="textBox">
+                  <div class="title">{{ productContent.title }}</div>
+                  <div class="content moreHidden moreHidden_4">
+                    {{ productContent.content }}
                   </div>
-                  <div class="characteristic_label">
-                    <ul class="characteristic_label_ul">
-                      <li v-for="items in productContent.label " :key="items.id">{{ items }}</li>
-                    </ul>
+                  <div class="characteristic">
+                    <div class="characteristic_title_box">
+                      <div class="characteristic_title_box_title">产品特点</div>
+                      <div class="br" />
+                    </div>
+                    <div class="characteristic_label">
+                      <ul class="characteristic_label_ul">
+                        <li v-for="items in productContent.label " :key="items.id">{{ items }}</li>
+                      </ul>
+                    </div>
                   </div>
+                  <div class="productBoxContent_details">查看详情 ></div>
                 </div>
-                <div class="productBoxContent_details">查看详情 ></div>
+                <div class="productImgBox_img">
+                  <img :src="item.img" alt="">
+                </div>
               </div>
-              <img :src="item.img" alt="" class="productImgBox_img">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -142,6 +146,7 @@ export default {
   components: { Title },
   data() {
     return {
+      carouselHeight: 600,
       solutionBoxList: [
         {
           id: '1',
@@ -182,7 +187,7 @@ export default {
       productImgBannerObj: [
         {
           id: '1',
-          img: require('@/assets/img/product_banner_wx.png')
+          img: require('@/assets/img/product_banner_wx2.png')
         },
         {
           id: '2',
@@ -291,11 +296,21 @@ export default {
     this.newBoxOne = this.newBox.slice(0, 2)
     this.newBoxTow = this.newBox.slice(2)
   },
+  mounted() {
+    this.calcCarsouelHeight()
+    window.addEventListener('resize', this.calcCarsouelHeight)
+  },
   methods: {
     bannerChange(val) {
       console.warn(val)
       this.bannerId = val + 1
       this.productContent = this.productObjContent[val]
+    },
+    calcCarsouelHeight() {
+      const height = 230
+      const imgH = window.document.body.clientWidth * (512 / 960)
+      this.carouselHeight = height + imgH
+      console.log(this.carouselHeight)
     }
   }
 }
