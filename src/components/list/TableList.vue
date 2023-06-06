@@ -1,11 +1,11 @@
 <template>
   <div class="tablelist">
     <div v-for="item in list" :key="item.id" class="listitem">
-      <p v-show="isShow">{{ item.content }}</p>
+      <p v-show="isShow" class="moreHidden moreHidden_3">{{ item.content }}</p>
 
       <img :src="item.img">
       <!-- <div> -->
-      <p v-show="!isShow">{{ item.content }}</p>
+      <p v-show="!isShow" class="moreHidden moreHidden_3">{{ item.content }}</p>
       <!-- </div> -->
     </div>
   </div>
@@ -58,12 +58,6 @@ export default {
             text-align: left;
             color: #4e5969;
             // line-height: 48px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal !important;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            display: -webkit-box;
         }
     }
 }
