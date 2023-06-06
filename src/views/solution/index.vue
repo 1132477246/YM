@@ -8,7 +8,7 @@
       </el-carousel>
       <div class="banner_text">
         <h4>{{ bannerTemp.title }}</h4>
-        <p class="moreHidden moreHidden_3">{{ bannerTemp.introduce }}</p>
+        <p class="moreHidden">{{ bannerTemp.introduce }}</p>
         <div class="banner_btn">
           <span>立即试用</span>
           <img :src="bannerTemp.icon" alt="">
