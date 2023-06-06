@@ -15,8 +15,9 @@ $mainWidth:1594px;
   margin: 0px;
 }
 html{
-  font-size:14px;
+  font-size: 14px;
 }
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -106,8 +107,6 @@ div:focus {
   }
 }
 
-
-
 @import './home.scss';
 
 @import './navBar.scss';
@@ -133,6 +132,12 @@ div:focus {
 @import './navBar_adapter.scss';
 
 @import './footer_adapter.scss';
+
+@import './about-adapter.scss';
+
+@import './contact-adapter.scss';
+
+@import './partners-adapter.scss';
 
 @import './solution_adapter.scss';
 

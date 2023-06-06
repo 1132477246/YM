@@ -12,6 +12,7 @@ import partnersRouter from './modules/partners'
 import contactRouter from './modules/contact'
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
