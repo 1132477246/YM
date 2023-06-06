@@ -15,8 +15,9 @@ $mainWidth:1594px;
   margin: 0px;
 }
 html{
-  font-size:14px;
+  font-size: 14px;
 }
+
 body {
   height: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -105,8 +106,6 @@ div:focus {
     height: 0;
   }
 }
-
-
 
 @import './home.scss';
 
