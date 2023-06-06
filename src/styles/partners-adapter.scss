@@ -1,0 +1,39 @@
+@media (max-width: 750px) {
+  .partners{
+    height: 100vh !important;
+    margin-bottom: 250px !important;
+  }
+  .partners .partners_header .header_text{
+    width: auto !important;
+    height: auto !important;
+    h3{
+      font-size: 14px !important;
+    }
+    h4{
+      font-size: 13px !important;
+    }
+  }
+  .partners .partners_mid{
+    top: 20% !important;
+    height: auto !important;
+    ul {
+      li{
+        width: 150px !important;
+        height: 100px !important;
+        .mid_grid{
+          width: 150px !important;
+          height: 100px !important;
+          .mid_title{
+            top: -30px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2200px) {
+  .partners{
+    height: auto !important;
+  }
+}
