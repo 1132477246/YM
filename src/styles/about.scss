@@ -9,7 +9,6 @@
             img{
                 width: 100%;
                 height: 100%;
-                object-fit: fill;
             }
         }
         .header_title{
@@ -33,7 +32,7 @@
                 font-weight: 700;
                 text-align: center;
                 color: #ffffff;
-                text-shadow: 0px 7px 4px 0px rgba(7,0,92,0.25);
+                text-shadow: 7px 4px rgba(7,0,92,0.25);
             }
         }
 
@@ -50,14 +49,15 @@
                 justify-content: flex-start;
             }
             p{
-                width: 718px;
-                height: 528px;
+                // width: 718px;
+                // height: 528px;
+                padding-right: 80px;
                 font-size: 32px;
                 font-family: Poppins, Poppins-Regular;
                 font-weight: 400;
                 text-align: justify;
                 color: #4e5969;
-                line-height: 48px;
+                // line-height: 48px;
             }
         }
         .mid_img{
@@ -67,7 +67,7 @@
             img{
                 // width: 100%;
                 height: 100%;
-                object-fit: fill;
+                // object-fit: fill;
             }
         }
     }
@@ -85,21 +85,22 @@
             .bot_grid{
                 .grid_title{
                     // width: 367px;
-                    height: 98px;
+                    // height: 98px;
                     background: #ffffff;
                     border: 1px solid #d8dfe9;
                     -webkit-backdrop-filter: blur(10px);
                     backdrop-filter: blur(5px);
                     div{
                         // width: 110px;
-                        height: 66px;
+                        // height: 66px;
                         font-size: 44px;
                         font-family: Poppins, Poppins-Regular;
                         font-weight: 400;
                         text-align: center;
                         color: #1d2129;
-                        line-height: 66px;
+                        // line-height: 66px;
                         letter-spacing: 2.2px;
+                        margin:16px auto;
                     }
                 }
                 img{

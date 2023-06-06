@@ -121,10 +121,11 @@
             //     color: #ffffff;
 
             // }
+            
+
             .solutionBoxList:hover {
                 transform: translateY(-10px);
-                transition: 0.1s;
-                transition-timing-function: ease-in-out;
+                transition: all 0.3s;
                 cursor: pointer;
                 box-shadow: 0px 0px 60px 0px rgba(25, 90, 148, 0.15);
 
@@ -141,6 +142,9 @@
                 width: 500px;
                 margin-right: 32px;
                 border: 1px solid #D8DFE9;
+
+                transform: translateY(0px);
+                transition: all 0.3s;
 
                 :last-child {
                     margin-right: 0px;
@@ -283,12 +287,15 @@
 
         position: relative;
         height: 512px;
-
+        width: 100%;
+        .product_container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
         .textBox {
-            position: absolute;
+            flex: 1 1 auto;
             padding: 60px 0px 56px 178px;
-            width: 960px;
-            height: 100%;
             background: #f2f4f7;
             z-index: 3;
 
@@ -312,7 +319,7 @@
                 font-weight: 400;
                 text-align: LEFT;
                 color: #4e5969;
-                line-height: 28px;
+                line-height: 30px;
                 margin-bottom: 32px;
             }
 
@@ -343,6 +350,8 @@
                 }
 
                 .characteristic_label {
+                    max-height: 120px;
+                    overflow: hidden;
                     .characteristic_label_ul {
                         display: flex;
                         width: 487px;
@@ -412,9 +421,11 @@
 
 
             .productImgBox_img {
-                height: 100%;
-                position: absolute;
-                right: 0;
+                width: 960px;
+                height: 512px;
+                img{
+                    width: 100%;
+                }
             }
         }
 
@@ -424,10 +435,11 @@
 
     .newBox {
         margin-bottom: 320px;
-
         .newBox_ul {
             // display: flex;
-
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
             .newBox_ul_li:nth-child(odd) {
                 margin-right: 32px;
             }
@@ -437,6 +449,7 @@
             }
 
             .newBox_ul_li:hover {
+                transition: all 0.3s;
                 box-shadow: 0px 8px 20px 0px rgba(224, 224, 224, 0.50), 0px 0px 60px 0px rgba(25, 90, 148, 0.15);
                 cursor: pointer;
 
@@ -447,12 +460,14 @@
 
             .newBox_ul_li {
                 border: 1px solid #D8DFE9;
-                float: left;
+                // float: left;
                 width: 766px;
            
                 padding: 24px;
                 display: flex;
                 margin-bottom: 48px;
+
+                transition: all 0.3s;
 
                 .newBox_img {
                     margin-right: 32px;
@@ -514,8 +529,11 @@
         }
 
         .newBox_ul_tow {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
             .newBox_ul_li_tow:nth-child(odd) {
-                margin-right: 32px;
+                margin-right: 60px;
             }
 
             .newBox_ul_li_tow:nth-child(even) {
@@ -536,8 +554,8 @@
 
             .newBox_ul_li_tow {
                 align-items: center;
-                float: left;
-                width: 766px;
+                // float: left;
+                width: 736px;
                 height: 36px;
                 padding: 0px 24px;
                 display: flex;

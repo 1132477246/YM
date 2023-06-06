@@ -2,7 +2,7 @@
     margin-top:100px;
     margin-bottom: 160px;
     .products_header{
-        // width: 1919px;
+        width: 1919px;
         height: 720px;
         background: #f2f4f7;
         position: relative;
@@ -15,7 +15,6 @@
           img{
             width: 100%;
             height: 100%;
-            object-fit: fill;
           }
         }
         .header_title{
@@ -23,25 +22,25 @@
           top:20%;
           left:6%;
           h2{
-              width: 384px;
-              height: 117px;
+              // width: 384px;
+              // height: 117px;
               font-size: 96px;
               font-family: Montserrat, Montserrat-Regular;
               font-weight: 400;
               text-align: left;
               color: #1d2129;
-              line-height: 117px;
+              // line-height: 117px;
           }
           p{
               margin-top:48px;
-              width: 750px;
-              height: 144px;
+              // width: 750px;
+              // height: 144px;
               font-size: 48px;
               font-family: Montserrat, Montserrat-Regular;
               font-weight: 400;
               text-align: left;
               color: #45484e;
-              line-height: 72px;
+              // line-height: 72px;
               letter-spacing: -0.07px;
           }
         }
