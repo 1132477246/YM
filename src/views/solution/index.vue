@@ -8,7 +8,7 @@
       </el-carousel>
       <div class="banner_text">
         <h4>{{ bannerTemp.title }}</h4>
-        <p>{{ bannerTemp.introduce }}</p>
+        <p class="moreHidden moreHidden_3">{{ bannerTemp.introduce }}</p>
         <div class="banner_btn">
           <span>立即试用</span>
           <img :src="bannerTemp.icon" alt="">
@@ -43,7 +43,7 @@ export default {
     return {
       bannerTemp: {
         title: '信号分析解决方案',
-        introduce: '这里是解决方案的简单描述，可展示一行或者两行',
+        introduce: '这里是解决方案的简单描述，可展示一行或者两行这里是解决方案的简单描述，可展示一行或者两行这里是解决方案的简单描述，可展示一行或者两行这里是解决方案的简单描述，可展示一行或者两行这里是解决方案的简单描述，可展示一行或者两行这里是解决方案的简单描述，可展示一行或者两行',
         icon: require('@/assets/solution/right@2x.png')
       },
       bannerObj: [

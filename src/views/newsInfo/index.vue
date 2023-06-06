@@ -12,7 +12,7 @@
         </div>
         <div class="news_list_mid">
           <div class="news_title">{{ item.title }}</div>
-          <p class="news_des">{{ item.describtion }}</p>
+          <p class="news_des moreHidden moreHidden_3">{{ item.describtion }}</p>
           <div class="news_btn">
             <div class="btn" @click="showDetails">查看详情</div>
             <img src="@/assets/news/small_right_blue_5@2x.png">
@@ -86,23 +86,3 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.el-pagination{
-    text-align:center;
-    margin-top:80px;
-}
-.el-pagination.is-background .btn-prev, .el-pagination.is-background .btn-next, .el-pagination.is-background .el-pager li{
-    min-width: 32px;
-    // width: 32px;
-    height: 32px;
-    line-height: 32px;
-    background: #ffffff;
-    border: 1px solid #d9d9d9;
-    border-radius: 2px;
-    font-size: 14px;
-    font-family: Roboto, Roboto-Regular;
-    font-weight: 400;
-    text-align: CENTER;
-    color: #1d2129;
-}
-</style>

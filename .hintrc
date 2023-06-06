@@ -9,7 +9,8 @@
         "ignore": [
           "flex",
           "flex-direction",
-          "backdrop-filter"
+          "backdrop-filter",
+          "flex-wrap"
         ]
       }
     ]

@@ -4,7 +4,7 @@
       <img :src="item.img">
       <div class="list_text">
         <h2>{{ item.title }}</h2>
-        <p>{{ item.introduce }}</p>
+        <p class="moreHidden moreHidden_3">{{ item.introduce }}</p>
       </div>
 
     </div>
@@ -27,6 +27,13 @@ export default {
 </script>
 
 <style lang="scss">
+@media (max-width: 400px) {
+    .banner_btn {
+        min-width: 80px !important;
+        padding: 10px 0px;
+    }
+}
+
 .gridList{
     margin:79px 176px 160px 180px;
     display: flex;
@@ -39,6 +46,7 @@ export default {
       align-items: center;
       // justify-content: space-around;
       margin-bottom: 33px;
+      width: 500px;
 
       img{
         width: 500px;
@@ -46,38 +54,31 @@ export default {
         background: #e5e5e5;
       }
       .list_text{
-        width: 500px;
-        height: 283px;
+        padding-bottom: 56px;
+        // width: 500px;
+        // height: 283px;
         background: #ffffff;
         border: 1px solid #d8dfe9;
         h2{
-          width: 313px;
+          // width: 313px;
           margin:56px auto 0;
-          height: 48px;
+          // height: 48px;
           font-size: 32px;
           font-family: Poppins, Poppins-Bold;
           font-weight: 700;
           text-align: CENTER;
           color: #1d2129;
-          line-height: 48px;
+          // line-height: 48px;
         }
         p{
           margin:24px auto 0;
-          width: 407px;
-          height: 99px;
+          padding: 0 46px;
           opacity: 0.5;
           font-size: 22px;
           font-family: Poppins, Poppins-Medium;
           font-weight: 500;
           text-align: CENTER;
           color: #45484e;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: normal !important;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          display: -webkit-box;
-          // line-height: 99px;
         }
       }
 

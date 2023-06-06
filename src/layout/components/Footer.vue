@@ -101,17 +101,16 @@ export default {
         ],
         new: [
           {
-            path: '',
             name: '关于我们'
           },
           {
             path: '',
             name: '公司介绍'
           }, {
-            path: '',
+            path: '/contact/index',
             name: '联系我们'
           }, {
-            path: '',
+            path: '/partners/index',
             name: '合作伙伴'
           }
         ],
@@ -135,8 +134,8 @@ export default {
     }
   },
   methods: {
-    handleOpen(url) {
-      console.log(url)
+    handleOpen(item) {
+      this.$router.push(item.path)
     }
   }
 }
