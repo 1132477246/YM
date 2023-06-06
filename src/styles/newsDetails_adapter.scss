@@ -1,0 +1,43 @@
+@media (max-width: 700px) {
+    .newdetails .details_header .details_top{
+        line-height: 16px!important;
+        img{
+            width: 10px!important;
+            height: 10px!important;
+        }
+        .details_back{
+            font-size: 10px!important;
+            margin-left: 2px!important;
+            // min-width: 50px!important;
+        }
+        .details_title{
+            font-size: 12px!important;
+            margin-left: 4px!important;
+            overflow: hidden; 
+            text-overflow: ellipsis;
+            //将对象作为弹性伸缩盒子模型显示。
+            display: -webkit-box;
+            // 从上到下垂直排列子元素
+            -webkit-box-orient: vertical; 
+            -webkit-line-clamp: 1;
+        }
+    }
+    .details_mid{
+        .mid_top{
+            line-height: 14px!important;
+            img{
+                width: 12px!important;
+                height: 12px!important;
+            }
+            span{
+                font-size: 11px!important;
+                margin-left: 4px!important;
+            }
+        }
+        .mid_content{
+            font-size: 13px!important;
+            line-height: 15px!important;
+        }
+    }
+    
+}

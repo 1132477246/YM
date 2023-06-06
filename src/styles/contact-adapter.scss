@@ -1,0 +1,67 @@
+@media (max-width: 700px) {
+  .bot_btn {
+      min-width: 80px !important;
+      padding: 10px 0px!important;
+  }
+  .left_text{
+    margin:10px 0!important;
+    img{
+      width: 10px !important;
+      height: 10px !important;
+    }
+    span{
+      font-size: 11px !important;
+    }
+  }
+  .mid_list{
+    height: auto !important;
+    flex-direction: column !important;
+    .mid_left{
+      width: 100% !important;
+      padding-bottom: 0px !important;
+      h2{
+        font-size: 13px !important;
+      }
+    }
+    .mid_right{
+      width: calc(100vw - 19vw) !important;
+      height: 150px !important;
+    }
+  }
+  .contactus_bot{
+    .el-form-item__label{
+      font-size: 12px !important;
+    }
+    .content{
+      img{
+        width: 10px !important;
+        height: 10px !important;
+        top: 44% !important;
+      }
+      .remark {
+        top: 20px !important;
+      }
+    }
+    .el-input__inner{
+      height: 30px !important;
+      font-size: 11px !important;
+      line-height: 30px !important;
+      padding-left: 15px !important;
+    }
+    .el-textarea__inner{
+      font-size: 12px !important;
+    }
+    .el-form-item--medium .el-form-item__content{
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+    p{
+      height: auto !important;
+      font-size: 12px !important;
+      line-height: 16px !important;
+    }
+    .bot_btn{
+      font-size: 12px !important;
+    }
+  }
+}

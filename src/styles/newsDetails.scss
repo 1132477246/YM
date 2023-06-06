@@ -57,10 +57,12 @@
         }
     }
     .details_mid{
+        height: auto;
+        width: 1564px;
+        margin: 80px auto 160px;
         .mid_top{
             display: flex;
             align-items: center;
-            margin-left: 178px;
             img{
                 width:48px;
                 height: 48px;
@@ -73,15 +75,15 @@
                 font-size: 24px;
                 font-family: Montserrat, Montserrat-SemiBold;
                 font-weight: normal;
-                text-align: CENTER;
+                text-align: center;
                 color: #86909c;
                 // line-height: 60px;
                 letter-spacing: 0.29px;
             }
         }
         .mid_content{
-            width: 1564px;
-            margin:32px 178px 160px;
+            height: auto;
+            margin-top:32px;
             // min-height: 580px;
             // background: #4e5969;
             font-size: 20px;
