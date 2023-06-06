@@ -15,7 +15,7 @@
 
     <Title :title-arry="['产品特点', 'Product Features']" />
 
-    <GirdList :list="gridlist" />
+    <GirdList :list="gridlist" class="products_mid" />
 
   </div>
 </template>
