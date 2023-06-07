@@ -44,7 +44,7 @@ export default {
   name: 'NewsIndex',
   data() {
     return {
-      total: 100,
+      total: 0,
       newsList: [],
       listQuery: {
         pagenum: 1,
