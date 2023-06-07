@@ -38,42 +38,42 @@
 
     <div class="contactus_bot">
       <div class="bot_top">
-        <el-form :model="dataForm">
+        <el-form ref="dataform" :model="dataForm" :rules="dataRules">
           <el-row :gutter="20">
             <el-col :span="8">
-              <el-form-item label="姓名" prop="name">
+              <el-form-item label="姓名" prop="personname">
                 <div class="content">
                   <img src="@/assets/contact/Frame@2x.png" alt="">
-                  <el-input v-model="dataForm.name" size="medium" placeholder="请留下您的姓名" />
+                  <el-input v-model="dataForm.personname" size="medium" placeholder="请留下您的姓名" />
                 </div>
               </el-form-item>
             </el-col>
             <el-col :span="8">
               <div class="content">
-                <el-form-item label="电话" prop="tel">
+                <el-form-item label="电话" prop="phone">
                   <img src="@/assets/contact/Frame_1@2x.png" alt="">
-                  <el-input v-model="dataForm.tel" placeholder="18501111111" />
+                  <el-input v-model="dataForm.phone" placeholder="18501111111" />
                 </el-form-item>
               </div>
             </el-col>
             <el-col :span="8">
               <div class="content">
-                <el-form-item label="邮箱" prop="email">
+                <el-form-item label="邮箱" prop="mail">
                   <img src="@/assets/contact/email_2@2x.png" alt="">
-                  <el-input v-model="dataForm.email" placeholder="请留下您的邮箱" />
+                  <el-input v-model="dataForm.mail" placeholder="请留下您的邮箱" />
                 </el-form-item>
               </div>
             </el-col>
           </el-row>
           <div class="content">
-            <el-form-item label="意见反馈" prop="remark">
+            <el-form-item label="意见反馈" prop="feedbackcontent">
               <img class="remark" src="@/assets/contact/Frame_2@2x.png" alt="">
-              <el-input v-model="dataForm.remark" type="textarea" :rows="10" placeholder="请输入您想说的..." />
+              <el-input v-model="dataForm.feedbackcontent" type="textarea" :rows="10" placeholder="请输入您想说的..." />
             </el-form-item>
           </div>
         </el-form>
         <p>{{ notice }}</p>
-        <div class="bot_btn">立即提交</div>
+        <div class="bot_btn" @click="handleSubmit">立即提交</div>
 
       </div>
     </div>
@@ -86,9 +86,24 @@ import Title from '@/components/title'
 
 import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
 
+import { phone } from '@/utils/validate'
+
+import { addFeedBack } from '@/api/contact'
+
 export default {
   components: { Title, BaiduMap },
   data() {
+    const validetePhone = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('联系电话不能为空'))
+      } else {
+        if (phone(value)) {
+          callback()
+        } else {
+          callback(new Error('请输入正确的手机号'))
+        }
+      }
+    }
     return {
       companys: [
         { id: 1, title: '北京扬铭科技发展有限责任公司',
@@ -116,16 +131,40 @@ export default {
       ],
       map: null,
       dataForm: {
-        name: '',
-        tel: '',
-        email: '',
-        remark: ''
+        personname: '',
+        phone: '',
+        mail: '',
+        feedbackcontent: ''
       },
-      notice: '请填写以上信息，我们将尽快安排专业人员与您沟通，帮助您快速制定解决方案。'
+      dataFormMid: {
+        personname: '',
+        phone: '',
+        mail: '',
+        feedbackcontent: ''
+      },
+      notice: '请填写以上信息，我们将尽快安排专业人员与您沟通，帮助您快速制定解决方案。',
+      dataRules: {
+        personname: [{ required: true, trigger: 'blur', message: '姓名不能为空' }],
+        phone: [{ validator: validetePhone, required: true, trigger: 'blur' }],
+        feedbackcontent: [{ required: true, trigger: 'blur' }]
+      }
     }
   },
   methods: {
-
+    handleSubmit() {
+      this.$refs.dataform.validate((valid) => {
+        if (valid) {
+          const bean = { ...this.dataForm }
+          addFeedBack(JSON.stringify(bean)).then(res => {
+            if (res.code === 200) {
+              this.$message.success('您的反馈我们已收到，将尽快安排专业人员与您联系！')
+              this.dataForm = { ...this.dataFormMid }
+              this.$refs.dataform.clearValidate()
+            }
+          })
+        }
+      })
+    }
   }
 }
 </script>

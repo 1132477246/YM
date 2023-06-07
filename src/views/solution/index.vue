@@ -1,11 +1,11 @@
 <template>
   <div class="solution">
     <div class="solution_banner">
-      <el-carousel>
-        <el-carousel-item v-for="item in bannerObj" :key="item.id">
-          <img :src="item.img" alt="">
-        </el-carousel-item>
-      </el-carousel>
+      <!-- <el-carousel>
+        <el-carousel-item v-for="item in bannerObj" :key="item.id"> -->
+      <img :src="bannerImg" alt="">
+      <!-- </el-carousel-item>
+      </el-carousel> -->
       <div class="banner_text">
         <h4>{{ bannerTemp.title }}</h4>
         <p class="moreHidden">{{ bannerTemp.introduce }}</p>
@@ -48,15 +48,15 @@ export default {
       },
       bannerObj: [
         {
-          id: '1',
+          id: '1-1',
           img: require('@/assets/solution/banner1.png')
         },
         {
-          id: '2',
+          id: '1-2',
           img: require('@/assets/solution/banner2.png')
         },
         {
-          id: '3',
+          id: '1-3',
           img: require('@/assets/solution/banner3.png')
         }
       ],
@@ -77,6 +77,18 @@ export default {
         { id: '2', title: '价值二', introduce: '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时展示全部内容' },
         { id: '3', title: '价值三', introduce: '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时展示全部内容' }
       ]
+    }
+  },
+  computed: {
+    bannerImg() {
+      const id = this.$route.query.id
+      let img
+      this.bannerObj.forEach(e => {
+        if (e.id === id) {
+          img = e.img
+        }
+      })
+      return img
     }
   }
 }

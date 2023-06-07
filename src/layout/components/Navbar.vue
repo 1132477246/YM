@@ -65,8 +65,8 @@ export default {
         { id: '3', title: '新闻资讯', path: '/news/index' },
         { id: '4', title: '关于我们', children: [
           { id: '1-1', title: '公司介绍', path: '/about/index' },
-          { id: '1-2', title: '联系我们', path: '/about/index' },
-          { id: '1-3', title: '合作伙伴', path: '/about/index' }
+          { id: '1-2', title: '联系我们', path: '/contact/index' },
+          { id: '1-3', title: '合作伙伴', path: '/partners/index' }
         ] }
       ],
       isMobile: false,
@@ -98,6 +98,7 @@ export default {
             this.childrenActive = ''
           })
         })
+        this.$router.push({ path: item.path, query: { id: item.id }})
         // this.$nextTick(() => {
         //   this.childrenActive = ''
         // })
@@ -106,10 +107,10 @@ export default {
         // document.querySelectorAll('#navlistChildren').className = 'bgYellow'
         // const navlistChildren = document.querySelectorAll('#navlistChildren')
         // navlistChildren.forEach((item) => { item.style.display = 'none' })
-      }
-      if (item.path) {
-        this.$router.push(item.path)
-      }
+      } else this.$router.push(item.path)
+      // if (item.path) {
+
+      // }
     },
     calcClientWidth() {
       this.isMobile = window.document.body.clientWidth <= 700
