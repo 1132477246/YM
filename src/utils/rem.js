@@ -7,7 +7,7 @@ function setRem() {
   const scale = document.documentElement.clientWidth / 1920
   // 设置页面根节点字体大小
   let fontSize = (baseSize * Math.min(scale, 2))
-  console.log('fontsize == ', fontSize)
+  console.log('fontsize == ', fontSize, document.documentElement.clientWidth)
   if (fontSize > 14) {
     fontSize = 14
   }

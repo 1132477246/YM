@@ -1,4 +1,4 @@
-$minWidth:1440px;
+$minWidth:1650px;
 @media (min-width: $minWidth) {
   .homeContent {
     .banner {
@@ -10,8 +10,8 @@ $minWidth:1440px;
         position: relative;
         .el-carousel__container {
             padding-top: 0px !important;
-            width: 1440px !important;
-            height: 540px !important;
+            width: $minWidth !important;
+            height: 615px !important;
         }
       }
     
@@ -72,7 +72,7 @@ $minWidth:1440px;
     }
     .newBox_ul_tow{
       width: $minWidth !important;
-      margin-left: 220px !important;
+      margin-left: 420px !important;
       .newBox_ul_li_tow{
         width: 600px !important;
       }
@@ -104,8 +104,8 @@ $minWidth:1440px;
         position: relative;
         .el-carousel__container {
             padding-top: 0px !important;
-            width: 1440px !important;
-            height: 540px !important;
+            width: $minWidth !important;
+            height: 615px !important;
             img {
               width: 100%;
               position: absolute;
@@ -127,7 +127,7 @@ $minWidth:1440px;
   }
   
   .gridList{
-    width: $minWidth !important;
+    width: 1440px !important;
   }
 
   .products{
@@ -143,7 +143,7 @@ $minWidth:1440px;
       img {
         position: relative !important;
         width: $minWidth !important;
-        height: 540px !important;
+        height: 615px !important;
       }
     }
     .header_title{
