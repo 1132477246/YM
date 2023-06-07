@@ -15,8 +15,9 @@ $mainWidth:1594px;
   margin: 0px;
 }
 html{
-  font-size: 14px;
+  font-size: 16px; 
 }
+
 
 body {
   height: 100%;
@@ -138,3 +139,5 @@ div:focus {
 @import './contact-adapter.scss';
 
 @import './partners-adapter.scss';
+
+@import './home_test.scss';

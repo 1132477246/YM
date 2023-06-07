@@ -87,7 +87,6 @@
     .banner {
         .el-carousel {
             height: 720px !important;
-
             .el-carousel__container {
                 height: 100%;
             }
@@ -99,8 +98,7 @@
         margin-bottom: 160px;
 
         img {
-            width: 1920px;
-            height: 720px;
+            width: 100%;
         }
     }
 
