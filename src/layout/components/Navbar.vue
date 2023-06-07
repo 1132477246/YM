@@ -116,16 +116,6 @@ export default {
   },
   methods: {
     handleOpen(item, name) {
-      console.warn(item, name)
-      // this.childrenActive = ''
-      // if (name === 'children') {
-      //   this.childrenActive = 'active'
-      //   setTimeout(() => {
-      //     this.$nextTick(() => {
-      //       this.childrenActive = ''
-      //     })
-      //   })
-      // }
       if (item.path) {
         this.$router.push({ path: item.path, query: { id: item.id }})
       }
