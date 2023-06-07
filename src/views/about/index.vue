@@ -8,28 +8,31 @@
         <p>无线电频谱智能检测领域的技术先行者     核心服务商</p>
       </div>
     </div>
-    <div class="about_mid">
-      <div class="mid_text">
-        <Title class="mid_title" :title-arry="['关于扬铭','About us']" :is-row="true" />
-        <p>{{ aboutUs.introduce }}</p>
-      </div>
-      <div class="mid_img">
-        <img :src="aboutUs.img" alt="">
+    <div class="mid-container">
+      <div class="about_mid">
+        <div class="mid_text">
+          <Title class="mid_title" :title-arry="['关于扬铭','About us']" :is-row="true" />
+          <p>{{ aboutUs.introduce }}</p>
+        </div>
+        <div class="mid_img">
+          <img :src="aboutUs.img" alt="">
+        </div>
       </div>
     </div>
-
-    <div class="about_bot">
-      <Title class="bot_title" :title-arry="['企业文化','corporate culture']" :is-row="true" />
-      <div class="bot_content">
-        <div v-for="item in cultures" :key="item.id" class="bot_grid">
-          <div v-show="item.isShow" class="grid_title">
-            <div>{{ item.title }}</div>
-          </div>
-          <img :src="item.img" alt="">
-          <div v-show="!item.isShow" class="grid_title">
-            <div>{{ item.title }}</div>
-          </div>
+    <div class="about_bot-container">
+      <div class="about_bot">
+        <Title class="bot_title" :title-arry="['企业文化','corporate culture']" :is-row="true" />
+        <div class="bot_content">
+          <div v-for="item in cultures" :key="item.id" class="bot_grid">
+            <div v-show="item.isShow" class="grid_title">
+              <div>{{ item.title }}</div>
+            </div>
+            <img :src="item.img" alt="">
+            <div v-show="!item.isShow" class="grid_title">
+              <div>{{ item.title }}</div>
+            </div>
           <!-- <h2>{{ item.title }}</h2> -->
+          </div>
         </div>
       </div>
     </div>

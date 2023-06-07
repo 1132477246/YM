@@ -1,14 +1,19 @@
 .newsInfo{
     margin-top:100px;
     padding-bottom: 160px;
-    // .news_header{
+    .news_header{
         //  width: 1920px;
         // width: 100%;
+        padding-top: percentage(400/1920);
+        position: relative;
         img{
-            height: 400px;
             width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: auto !important;
         }
-    // }
+    }
     .news_content{
         margin-top:80px;
         .news_list{
@@ -91,10 +96,12 @@
                 }
             }
             .news_list_right{
-                flex:2;
+                width: 500px;
+                height: 240px;
+                overflow: hidden;
                 img{
-                    width: 500px;
-                    height: 240px;
+                    width: 100%;
+                    height: 100%;
                     border: 1px solid #d8dfe9;
                 }
             }

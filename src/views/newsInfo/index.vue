@@ -1,8 +1,8 @@
 <template>
   <div class="newsInfo">
-    <!-- <div class="news_header"> -->
-    <img src="@/assets/news/newsBanner.png" alt="">
-    <!-- </div> -->
+    <div class="news_header">
+      <img src="@/assets/news/newsBanner.png" alt="">
+    </div>
 
     <div class="news_content">
       <div v-for="item in newsList" :key="item.id" class="news_list">
