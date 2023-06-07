@@ -12,37 +12,54 @@
 
           <li v-for="item in navlist" :key="item.id" class="navlistLi active">
             <!-- :class="item.path===routePath?'active':'a'" -->
-            <a href="" @click.prevent="handleOpen(item)">
-              {{ item.title }}
-              <img v-show="item.children" class="downIcon" src="@/assets/img/nav_down.png" alt="">
+
+            <el-dropdown v-if="item.children" class="navlistLi_dropdown" trigger="hover">
+              <span class="el-dropdown-link dropDownHover">
+                {{ item.title }} <i class="el-icon-arrow-down el-icon--right " />
+              </span>
+              <el-dropdown-menu slot="dropdown" class="navelDropdownMenu">
+                <el-dropdown-item v-for="items in item.children " :key="items.id" class="dropdownChildren">
+                  <div @click.prevent="handleOpen(items,'children')">
+                    {{ items.title }}
+                  </div>
+
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+            <div v-else>
+              <a href="" @click.prevent="handleOpen(item)">
+                {{ item.title }}
+              </a>
+            </div>
+            <!-- <img v-show="item.children" class="downIcon" src="@/assets/img/nav_down.png" alt="">
 
               <ul v-if="item.children&&childrenActive===''" id="navlistChildren" class="navlistChildren">
                 <li v-for="items in item.children " :key="items.id"><a href="" @click.prevent.stop="handleOpen(items,'children')">{{ items.title }}</a></li>
-              </ul>
-            </a>
+              </ul> -->
+
           </li>
-          <!-- <li><a href="">解决方案</a></li>
-          <li><a href="">产品介绍</a></li>
-          <li><a href="">新闻资讯</a></li>
-          <li><a href="">关于我们</a></li> -->
+
         </ul>
       </div>
       <div v-if="isMobile" class="mobile_nav">
-        <el-dropdown trigger="click" @command="menuItemClick" @visible-change="dropDownVisibleChange">
+        <el-dropdown ref="dropdown" trigger="click" :hide-on-click="false" @command="menuItemClick" @visible-change="dropDownVisibleChange">
           <span class="el-dropdown-link">
             {{ menuTitle }}
             <i class="el-icon-arrow-down el-icon--right" :class="dropDownVisiable ? 'dropDown-open' : 'dropDown-close'" />
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-for="item in navlist" :key="item.id" class="navigation" :command="item" @click="() => menuItemClick(item)">{{ item.title }}
-                <div class="list_right">
-                  <a href="#">消费类处理器:</a>
-                  <a href="#">锐龙 THREADRIPPER</a>
-                  <a href="#">锐龙</a>
+              <el-dropdown-item v-for="item in navlist" :key="item.id" class="navigation" :command="item" @click="() => menuItemClick(item)">
 
-                </div>
+                <el-collapse v-if="item.children&&item.children.length>0" v-model="activeName" accordion>
+                  <el-collapse-item :title=" item.title " :name="item.id" class="dropdownBoxCollapse">
+                    <ul>
+                      <li v-for="items in item.children" :key="items.id" class="dropdownBox" @click.prevent.stop="menuItemClick(items)"><a href="">{{ items.title }}</a></li>
+                    </ul>
+                  </el-collapse-item>
+                </el-collapse>
 
+                <div v-else class="dropdownBox">{{ item.title }}</div>
               </el-dropdown-item>
             </el-dropdown-menu>
           </template>
@@ -57,6 +74,8 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
+      hideClickState: true,
+      activeName: '',
       navlist: [
         { id: '0', title: '首页', path: '/' },
         { id: '1', title: '解决方案', children: [
@@ -79,8 +98,8 @@ export default {
       ],
       isMobile: false,
       menuTitle: '首页',
-      dropDownVisiable: false,
-      childrenActive: ''
+      dropDownVisiable: false
+      // childrenActive: ''
     }
   },
   computed: {
@@ -97,35 +116,25 @@ export default {
   },
   methods: {
     handleOpen(item, name) {
-      console.warn(name)
-      this.childrenActive = ''
-      if (name === 'children') {
-        this.childrenActive = 'active'
-        setTimeout(() => {
-          this.$nextTick(() => {
-            this.childrenActive = ''
-          })
-        })
+      if (item.path) {
         this.$router.push({ path: item.path, query: { id: item.id }})
-        // this.$nextTick(() => {
-        //   this.childrenActive = ''
-        // })
-
-        // document.getElementById('#navlistChildren').style.background = 'red'
-        // document.querySelectorAll('#navlistChildren').className = 'bgYellow'
-        // const navlistChildren = document.querySelectorAll('#navlistChildren')
-        // navlistChildren.forEach((item) => { item.style.display = 'none' })
-      } else this.$router.push(item.path)
-      // if (item.path) {
-
-      // }
+      }
     },
     calcClientWidth() {
       this.isMobile = window.document.body.clientWidth <= 700
     },
     menuItemClick(item) {
+      console.warn(item.path)
+      // console.warn(item, 'hideClickState')
+      if (item.children && item.children.length > 0) {
+        this.$refs.dropdown.show()
+      } else {
+        this.$refs.dropdown.hide()
+      }
       this.menuTitle = item.title
-      this.$router.push(item.path)
+      if (item.path) {
+        this.$router.push(item.path)
+      }
     },
     dropDownVisibleChange(visiable) {
       this.dropDownVisiable = visiable

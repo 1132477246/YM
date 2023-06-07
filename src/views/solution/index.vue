@@ -1,19 +1,19 @@
 <template>
   <div class="solution">
     <div class="solution_banner">
-      <!-- <el-carousel>
-        <el-carousel-item v-for="item in bannerObj" :key="item.id"> -->
-      <img :src="bannerImg" alt="">
-      <!-- </el-carousel-item>
-      </el-carousel> -->
-      <div class="banner_text">
-        <h4>{{ bannerTemp.title }}</h4>
-        <p class="moreHidden">{{ bannerTemp.introduce }}</p>
-        <div class="banner_btn">
-          <span>立即试用</span>
-          <img :src="bannerTemp.icon" alt="">
-        </div>
-      </div>
+      <el-carousel>
+        <el-carousel-item v-for="item in bannerObj" :key="item.id">
+          <img :src="item.img" alt="">
+          <div class="banner_text">
+            <h4>{{ bannerTemp.title }}</h4>
+            <p class="moreHidden">{{ bannerTemp.introduce }}</p>
+            <div class="banner_btn">
+              <span>立即试用</span>
+              <img :src="bannerTemp.icon" alt="">
+            </div>
+          </div>
+        </el-carousel-item>
+      </el-carousel>
     </div>
 
     <Title :title-arry="['业务背景','Business background']" />

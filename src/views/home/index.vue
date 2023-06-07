@@ -3,8 +3,8 @@
     <div class="banner">
       <!-- <img src="@/assets/img/banner.png" alt=""> -->
       <el-carousel>
-        <el-carousel-item v-for="item in bannerObj" :key="item.index" @click="bannerClick(item)">
-          <img :src="ip+item.rotationchartimgurl" alt="">
+        <el-carousel-item v-for="item in bannerObj" :key="item.index">
+          <img :src="ip+item.rotationchartimgurl" alt="" class="imgHover" @click="bannerClick(item)">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -34,7 +34,7 @@
           <div class="deails">
             <div class="deailsContent">
               <div class="title">查看详情</div>
-              <div>></div>
+              <div>       <i class="el-icon-arrow-right" /></div>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
 
         <div class="productImgBox">
 
-          <el-carousel ref="productBanner" indicator-position="none" :interval="1000" :autoplay="false" @change="bannerChange">
+          <el-carousel ref="productBanner" indicator-position="none" :interval="5000" :autoplay="autoplayState" @change="bannerChange">
             <el-carousel-item
               v-for="item in productImgBannerObj"
               :key="item.id"
@@ -84,7 +84,10 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="productBoxContent_details" @click="deailsClick(item.id)">查看详情 ></div>
+                  <div class="productBoxContent_details" @click="deailsClick(item.id)">查看详情
+                    <i class="el-icon-arrow-right" />
+
+                  </div>
                 </div>
                 <div class="productImgBox_img">
                   <img :src="item.img" alt="">
@@ -151,6 +154,7 @@ export default {
   components: { Title },
   data() {
     return {
+      autoplayState: true,
       listQuery: {
         pagenum: 1,
         pagesize: 10
@@ -197,7 +201,7 @@ export default {
       productImgBannerObj: [
         {
           id: '1',
-          img: require('@/assets/img/product_banner_wx2.png')
+          img: require('@/assets/img/product_banner_wx.png')
         },
         {
           id: '2',
@@ -298,7 +302,8 @@ export default {
       newBoxOne: [],
       newBoxTow: [],
       bannerId: '',
-      banner: ''
+      banner: '',
+      setTimeoutFN: ''
     }
   },
   computed: {
@@ -334,8 +339,9 @@ export default {
       })
     },
     bannerClick(item) {
+      console.warn(item)
       if (item.rotationcharthrefurl && item.rotationcharthrefurl.length > 1) {
-        window.location.href = item.rotationcharthrefurl
+        window.open(item.rotationcharthrefurl)
       }
     },
     GetRotationChartList() {
@@ -355,7 +361,14 @@ export default {
     },
     product_click(id) {
       console.warn(id)
+      this.autoplayState = false
       this.$refs.productBanner.setActiveItem(id - 1)
+      if (this.setTimeoutFN) {
+        clearTimeout(this.setTimeoutFN)
+      }
+      this.setTimeoutFN = setTimeout(() => {
+        this.autoplayState = true
+      }, 10000)
     },
     bannerChange(val) {
       console.warn(val)

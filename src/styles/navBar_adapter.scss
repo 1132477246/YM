@@ -1,3 +1,30 @@
+.dropdownChildren{
+  color: #4e5969 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  padding: 0px !important;
+  border-bottom: 1px rgba(240, 240, 240, 1) solid;
+  div{
+      height: 100%;
+      width: 100%;
+      padding: 20px 50px !important;
+  }
+}
+.dropdownChildren:nth-last-child(2){
+  border-bottom: none !important;
+  .el-collapse-item__header{
+    border-bottom: none !important;
+  }
+}
+.dropDown-open{
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+
+.dropDown-close{
+  transform: rotate(0deg);
+  transition: all 0.3s;
+}
 @media (max-width: 700px) {
   .navMain{
     height: 50px !important;
@@ -54,31 +81,54 @@
     color: #4e5969 !important;
     font-size: 14px !important;
     line-height: 20px !important;
-    padding: 20px 50px !important;
+    // padding: 20px 50px !important;
+    padding: 0px !important;
     border-bottom: 1px rgba(240, 240, 240, 1) solid;
   }
   .el-dropdown-menu{
     li:nth-last-child(2){
       border-bottom: none !important;
+      .el-collapse-item__header{
+        border-bottom: none !important;
+      }
     }
   }
   
-  .navigation{
-    position: relative;
+  // .navigation{
+  //   position: relative;
+  // }
+  // .list_right{
+  //   position: absolute;
+  //   left: -232px;
+  //   background: #fff;
+  //   a{
+  //       display: block;
+  //       color: #4e5969 !important;
+  //   font-size: 14px !important;
+  //   line-height: 20px !important;
+  //   padding: 20px 50px !important;
+  //   border-bottom: 1px #f0f0f0 solid;
+  //   }
+  // }
+.navigation{
+  .el-collapse{
+    border:none
   }
-  .list_right{
-    position: absolute;
-    left: -232px;
-    background: #fff;
-    a{
-        display: block;
-        color: #4e5969 !important;
-    font-size: 14px !important;
-    line-height: 20px !important;
+  
+}
+.dropdownBox{
     padding: 20px 50px !important;
-    border-bottom: 1px #f0f0f0 solid;
+    
+}
+.dropdownBoxCollapse{
+  ul{
+    li{
     }
   }
+  .el-collapse-item__header {
+    padding: 20px 50px !important;
+    height: auto;
 
-
+  }
+}
 }
