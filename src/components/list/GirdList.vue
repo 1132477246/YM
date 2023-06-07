@@ -71,7 +71,7 @@ export default {
           margin:56px auto 0;
           // height: 48px;
           font-size: 32px;
-          font-family: Poppins, Poppins-Bold;
+
           font-weight: 700;
           text-align: CENTER;
           color: #1d2129;
@@ -82,7 +82,7 @@ export default {
           padding: 0 46px;
           opacity: 0.5;
           font-size: 22px;
-          font-family: Poppins, Poppins-Medium;
+
           font-weight: 500;
           text-align: CENTER;
           color: #45484e;
