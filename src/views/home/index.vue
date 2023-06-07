@@ -3,8 +3,8 @@
     <div class="banner">
       <!-- <img src="@/assets/img/banner.png" alt=""> -->
       <el-carousel>
-        <el-carousel-item v-for="item in bannerObj" :key="item.id">
-          <img :src="item.img" alt="">
+        <el-carousel-item v-for="item in bannerObj" :key="item.index" @click="bannerClick(item)">
+          <img :src="ip+item.rotationchartimgurl" alt="">
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -20,6 +20,7 @@
           v-for="item in solutionBoxList"
           :key="item.id"
           class="solutionBoxList"
+          @click="solutionClick(item.id)"
         >
           <div class="img">
             <img :src="item.img" alt="">
@@ -48,7 +49,7 @@
         <Title :title-arry="['产品介绍', 'Product Introduction']" />
         <div class="productBoxLi">
           <ul>
-            <li v-for="item in productObj" :key="item.id" :class="Number(bannerId)===Number(item.id)?'active':'2'">
+            <li v-for="item in productObj" :key="item.id" :class="Number(bannerId)===Number(item.id)?'active':''" @click="product_click(item.id)">
               <img :src="item.img" alt="">
               <div class="listTitle">{{ item.title }}</div>
               <div class="listUnderline" />
@@ -60,7 +61,8 @@
       <div class="productBoxContent" :style="{'--height': carouselHeight + 'px'}">
 
         <div class="productImgBox">
-          <el-carousel indicator-position="none" :interval="1000" :autoplay="false" @change="bannerChange">
+
+          <el-carousel ref="productBanner" indicator-position="none" :interval="1000" :autoplay="false" @change="bannerChange">
             <el-carousel-item
               v-for="item in productImgBannerObj"
               :key="item.id"
@@ -82,7 +84,7 @@
                       </ul>
                     </div>
                   </div>
-                  <div class="productBoxContent_details">查看详情 ></div>
+                  <div class="productBoxContent_details" @click="deailsClick(item.id)">查看详情 ></div>
                 </div>
                 <div class="productImgBox_img">
                   <img :src="item.img" alt="">
@@ -98,30 +100,30 @@
       <Title :title-arry="['新闻咨询', 'News']" />
       <div>
         <ul class="newBox_ul">
-          <li v-for="item in newBoxOne " :key="item.index" class="newBox_ul_li">
+          <li v-for="item in newBoxOne " :key="item.index" class="newBox_ul_li" @click="showDetails(item.id)">
             <div class="newBox_img">
-              <img :src="item.img" alt="">
+              <img :src="ip+item.newsimgurl" alt="">
             </div>
             <div class="newBox_text_box">
-              <div class="newBox_title oneHidden">{{ item.title }}</div>
-              <div class="newBox_mainText moreHidden moreHidden_4">{{ item.text }}</div>
+              <div class="newBox_title oneHidden">{{ item.newstitle }}</div>
+              <div class="newBox_mainText moreHidden moreHidden_4">{{ item.shortnewscontent }}</div>
               <div class="newBox_time_box">
                 <img src="@/assets/img/time.png" alt="">
-                <div class="newBox_time"> {{ item.time }}</div>
+                <div class="newBox_time"> {{ item.createtime?item.createtime.substring(0,11):'' }}</div>
               </div>
             </div>
           </li>
         </ul>
 
         <ul class="newBox_ul_tow">
-          <li v-for="item in newBoxTow " :key="item.index" class="newBox_ul_li_tow">
+          <li v-for="item in newBoxTow " :key="item.index" class="newBox_ul_li_tow" @click="showDetails(item.id)">
             <div class="newBox_icon" />
             <div class="newBox_text_box_tow">
-              <div class="newBox_title_tow oneHidden">{{ item.title }}</div>
+              <div class="newBox_title_tow oneHidden">{{ item.newstitle }}</div>
 
               <div class="newBox_time_box_tow">
                 <img src="@/assets/img/time.png" alt="">
-                <div class="newBox_time"> {{ item.time }}</div>
+                <div class="newBox_time"> {{ item.createtime?item.createtime.substring(0,11):'' }}</div>
               </div>
             </div>
           </li>
@@ -131,7 +133,7 @@
           查看全部
           <img src="@/assets/img/right.png">
         </div> -->
-        <el-button class="getAll" type="primary">查看全部  <img src="@/assets/img/right.png"></el-button>
+        <el-button class="getAll" type="primary" @click="getallNews">查看全部  <img src="@/assets/img/right.png"></el-button>
 
       </div>
     </div>
@@ -140,12 +142,19 @@
 </template>
 
 <script>
+import { newsList } from '@/api/news'
+
 import Title from '@/components/title'
+import { GetRotationChartList } from '@/api/home'
 export default {
   name: 'HomeIndex',
   components: { Title },
   data() {
     return {
+      listQuery: {
+        pagenum: 1,
+        pagesize: 10
+      },
       carouselHeight: 600,
       solutionBoxList: [
         {
@@ -154,35 +163,36 @@ export default {
           content:
             '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时,展示全部内容',
           img: require('@/assets/img/solutionone.png')
+
         },
         {
           id: '2',
-          title: '信号分析解决方案',
+          title: '训练系统解决方案',
           content:
             '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时,展示全部内容',
-          img: require('@/assets/img/solutionone.png')
+          img: require('@/assets/img/solutionTow.png')
         },
         {
           id: '3',
-          title: '信号分析解决方案',
+          title: '人工智能解决方案',
           content:
             '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时,展示全部内容',
-          img: require('@/assets/img/solutionone.png')
+          img: require('@/assets/img/solutionThree.png')
         }
       ],
       bannerObj: [
-        {
-          id: '1',
-          img: require('@/assets/img/banner.png')
-        },
-        {
-          id: '2',
-          img: require('@/assets/img/banner.png')
-        },
-        {
-          id: '3',
-          img: require('@/assets/img/banner.png')
-        }
+        // {
+        //   id: '1',
+        //   img: require('@/assets/img/banner.png')
+        // },
+        // {
+        //   id: '2',
+        //   img: require('@/assets/img/banner.png')
+        // },
+        // {
+        //   id: '3',
+        //   img: require('@/assets/img/banner.png')
+        // }
       ],
       productImgBannerObj: [
         {
@@ -253,54 +263,100 @@ export default {
       ],
       productContent: '',
       newBox: [
-        {
-          img: require('@/assets/img/new1.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }, {
-          img: require('@/assets/img/new2.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }, {
-          img: require('@/assets/img/solutionThree.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }, {
-          img: require('@/assets/img/solutionThree.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }, {
-          img: require('@/assets/img/solutionThree.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }, {
-          img: require('@/assets/img/solutionThree.png'),
-          title: '今日扬铭科技获得一亿元融资',
-          text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
-          time: '06.01/2023'
-        }
+        // {
+        //   img: require('@/assets/img/new1.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }, {
+        //   img: require('@/assets/img/new2.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }, {
+        //   img: require('@/assets/img/solutionThree.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }, {
+        //   img: require('@/assets/img/solutionThree.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }, {
+        //   img: require('@/assets/img/solutionThree.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }, {
+        //   img: require('@/assets/img/solutionThree.png'),
+        //   title: '今日扬铭科技获得一亿元融资',
+        //   text: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务;销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品;生产通讯设备、机械设',
+        //   time: '06.01/2023'
+        // }
       ],
       newBoxOne: [],
       newBoxTow: [],
-      bannerId: ''
-
+      bannerId: '',
+      banner: ''
+    }
+  },
+  computed: {
+    ip() {
+      const len = process.env.VUE_APP_BASE_SERVICE.length
+      return process.env.VUE_APP_BASE_SERVICE.substring(0, len - 5)
     }
   },
   created() {
     this.bannerChange(0)
-    this.newBoxOne = this.newBox.slice(0, 2)
-    this.newBoxTow = this.newBox.slice(2)
+
+    this.GetRotationChartList()
+    this.getnewsList()
   },
   mounted() {
     this.calcCarsouelHeight()
     window.addEventListener('resize', this.calcCarsouelHeight)
   },
   methods: {
+    getallNews() {
+      this.$router.push({ path: '/news/index' })
+    },
+    showDetails(id) {
+      this.$router.push({ path: '/news/details', query: { id: id }})
+    },
+    getnewsList() {
+      newsList(this.listQuery).then(res => {
+        if (res.code === 200 && res.data) {
+          this.newsList = res.data.object
+          this.newBoxOne = this.newsList.slice(0, 2)
+          this.newBoxTow = this.newsList.slice(2, 6)
+        }
+      })
+    },
+    bannerClick(item) {
+      if (item.rotationcharthrefurl && item.rotationcharthrefurl.length > 1) {
+        window.location.href = item.rotationcharthrefurl
+      }
+    },
+    GetRotationChartList() {
+      GetRotationChartList({}).then((res) => {
+        if (res.code === 200 && res.data) {
+          this.bannerObj = res.data.object
+        }
+      })
+    },
+    deailsClick(id) {
+      console.warn(id)
+      this.$router.push('/solution/index')
+    },
+    solutionClick(id) {
+      console.warn(id)
+      this.$router.push('/products/index')
+    },
+    product_click(id) {
+      console.warn(id)
+      this.$refs.productBanner.setActiveItem(id - 1)
+    },
     bannerChange(val) {
       console.warn(val)
       this.bannerId = val + 1
