@@ -75,7 +75,6 @@
           </el-form>
           <p>{{ notice }}</p>
           <div class="bot_btn">立即提交</div>
-
         </div>
       </div>
     </div>
@@ -88,9 +87,24 @@ import Title from '@/components/title'
 
 import BaiduMap from 'vue-baidu-map/components/map/Map.vue'
 
+import { phone } from '@/utils/validate'
+
+import { addFeedBack } from '@/api/contact'
+
 export default {
   components: { Title, BaiduMap },
   data() {
+    const validetePhone = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('联系电话不能为空'))
+      } else {
+        if (phone(value)) {
+          callback()
+        } else {
+          callback(new Error('请输入正确的手机号'))
+        }
+      }
+    }
     return {
       companys: [
         { id: 1, title: '北京扬铭科技发展有限责任公司',
@@ -118,16 +132,40 @@ export default {
       ],
       map: null,
       dataForm: {
-        name: '',
-        tel: '',
-        email: '',
-        remark: ''
+        personname: '',
+        phone: '',
+        mail: '',
+        feedbackcontent: ''
       },
-      notice: '请填写以上信息，我们将尽快安排专业人员与您沟通，帮助您快速制定解决方案。'
+      dataFormMid: {
+        personname: '',
+        phone: '',
+        mail: '',
+        feedbackcontent: ''
+      },
+      notice: '请填写以上信息，我们将尽快安排专业人员与您沟通，帮助您快速制定解决方案。',
+      dataRules: {
+        personname: [{ required: true, trigger: 'blur', message: '姓名不能为空' }],
+        phone: [{ validator: validetePhone, required: true, trigger: 'blur' }],
+        feedbackcontent: [{ required: true, trigger: 'blur' }]
+      }
     }
   },
   methods: {
-
+    handleSubmit() {
+      this.$refs.dataform.validate((valid) => {
+        if (valid) {
+          const bean = { ...this.dataForm }
+          addFeedBack(JSON.stringify(bean)).then(res => {
+            if (res.code === 200) {
+              this.$message.success('您的反馈我们已收到，将尽快安排专业人员与您联系！')
+              this.dataForm = { ...this.dataFormMid }
+              this.$refs.dataform.clearValidate()
+            }
+          })
+        }
+      })
+    }
   }
 }
 </script>
