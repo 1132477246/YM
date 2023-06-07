@@ -56,7 +56,7 @@ export default {
             // height: 144px;
             margin: auto;
             font-size: 32px;
-            font-family: Montserrat, Montserrat-Regular;
+
             font-weight: 400;
             text-align: left;
             color: #4e5969;
