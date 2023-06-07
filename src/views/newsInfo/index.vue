@@ -25,6 +25,7 @@
     </div>
 
     <el-pagination
+      v-if="total>0"
       class="white-list-tool"
       background
       layout="prev, pager, next"
@@ -78,6 +79,7 @@ export default {
     pagination() {
       this.getnewsList()
     }
+
   }
 }
 </script>
