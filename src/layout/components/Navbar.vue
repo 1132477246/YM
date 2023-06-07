@@ -28,14 +28,22 @@
         </ul>
       </div>
       <div v-if="isMobile" class="mobile_nav">
-        <el-dropdown @command="menuItemClick" @visible-change="dropDownVisibleChange">
+        <el-dropdown trigger="click" @command="menuItemClick" @visible-change="dropDownVisibleChange">
           <span class="el-dropdown-link">
             {{ menuTitle }}
             <i class="el-icon-arrow-down el-icon--right" :class="dropDownVisiable ? 'dropDown-open' : 'dropDown-close'" />
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item v-for="item in navlist" :key="item.id" :command="item" @click="() => menuItemClick(item)">{{ item.title }}</el-dropdown-item>
+              <el-dropdown-item v-for="item in navlist" :key="item.id" class="navigation" :command="item" @click="() => menuItemClick(item)">{{ item.title }}
+                <div class="list_right">
+                  <a href="#">消费类处理器:</a>
+                  <a href="#">锐龙 THREADRIPPER</a>
+                  <a href="#">锐龙</a>
+
+                </div>
+
+              </el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>

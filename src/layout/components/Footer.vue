@@ -32,7 +32,7 @@
       <div class="contact">
         <div class="wx">
           <div>
-            <img class="icon" src="" alt="">
+            <img class="icon" src="@/assets/img/footer_icon.png" alt="">
             关注官方微信
           </div>
           <div>
@@ -70,32 +70,32 @@ export default {
             name: '解决方案'
           },
           {
-            path: '',
+            path: '/solution/index',
             name: '信号分析解决方案'
           }, {
-            path: '',
+            path: '/solution/index',
             name: '训练系统解决方案'
           }, {
-            path: '',
+            path: '/solution/index',
             name: '人工智能解决方案'
           }
         ],
         product: [
           {
-            path: '',
+            path: '/products/index',
             name: '产品介绍'
           },
           {
-            path: '',
+            path: '/products/index',
             name: '卫星信号分析'
           }, {
-            path: '',
+            path: '/products/index',
             name: '通信信号分析'
           }, {
-            path: '',
+            path: '/products/index',
             name: '训练系统'
           }, {
-            path: '',
+            path: '/products/index',
             name: 'AI平台开发'
           }
         ],
@@ -104,7 +104,7 @@ export default {
             name: '关于我们'
           },
           {
-            path: '',
+            path: '/about/index',
             name: '公司介绍'
           }, {
             path: '/contact/index',
