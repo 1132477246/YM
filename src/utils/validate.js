@@ -85,3 +85,9 @@ export function isArray(arg) {
   }
   return Array.isArray(arg)
 }
+
+// 手机号
+export function phone(str) {
+  const reg = /^1[3456789]\d{9}$/
+  return reg.test(str)
+}
