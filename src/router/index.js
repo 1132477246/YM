@@ -12,18 +12,19 @@ import partnersRouter from './modules/partners'
 import contactRouter from './modules/contact'
 
 export default new Router({
+  mode: 'history',
   base: '/homepage',
   routes: [
     {
       path: '/',
       component: Layout,
-      redirect: '/dashboard',
+      redirect: '/home',
       children: [
         {
-          path: 'dashboard',
+          path: 'home',
           component: () => import('@/views/home/index'),
-          name: 'Dashboard',
-          meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+          name: 'Home',
+          meta: { title: 'home', icon: 'dashboard', affix: true }
         }
       ]
     },
