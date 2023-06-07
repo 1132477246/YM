@@ -4,10 +4,14 @@ $minWidth:1440px;
     .banner {
       margin-top: 5.20833rem !important;
       .el-carousel {
-        height: 100% !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
         position: relative;
         .el-carousel__container {
-            padding-top: percentage(720/1920);
+            padding-top: 0px !important;
+            width: 1440px !important;
+            height: 540px !important;
         }
       }
     
@@ -93,20 +97,27 @@ $minWidth:1440px;
 
   .solution {
     .solution_banner {
-      .el-carousel{
+      .el-carousel {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
         position: relative;
-        height: auto !important;
         .el-carousel__container {
-          padding-top: percentage(720/1920);
-          img {
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: auto !important;
-          }
+            padding-top: 0px !important;
+            width: 1440px !important;
+            height: 540px !important;
+            img {
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: auto !important;
+            }
         }
       }
+    }
+    .banner_text{
+
     }
   }
 
@@ -121,15 +132,27 @@ $minWidth:1440px;
 
   .products{
     .header_img{
-      padding-top: percentage(720/1920);
-      position: relative;
-      img {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: auto !important;
+      width: 100%;
+      padding-top: 0px !important;
+      display: flex;
+      justify-content: center;
+      .header-img-container{
+        width: $minWidth !important;
+        position: relative !important;
       }
+      img {
+        position: relative !important;
+        width: $minWidth !important;
+        height: 540px !important;
+      }
+    }
+    .header_title{
+     h2{
+      font-size: 56px !important;
+     }
+     p{
+      font-size: 28px !important;
+     }
     }
   }
 
@@ -206,5 +229,11 @@ $minWidth:1440px;
 @media (max-width: 1000px) {
   .newsInfo{
     height: calc(100vh - 100px);
+  }
+}
+
+@media (max-width: 800px) {
+  .products{
+    height: 100vh !important;
   }
 }
