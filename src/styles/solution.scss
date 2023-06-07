@@ -5,10 +5,17 @@
         position: relative;
         margin-bottom: 160px;
         .el-carousel{
-            height: 800px !important;
-            .el-carousel__container{
-                height: 100%;
-            }
+            position: relative;
+            .el-carousel__container {
+                padding-top: percentage(720/1920);
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: auto !important;
+                }
+                }
         }
         // .banner_img{
         //     width: 100%;

@@ -37,6 +37,11 @@
         }
 
     }
+    .mid-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     .about_mid{
         display: flex;
         align-items: flex-start;
@@ -71,7 +76,13 @@
             }
         }
     }
+    .about_bot-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     .about_bot{
+        width: 100%;
         margin:160px 178px;
         .bot_title{
             display: flex;

@@ -1,14 +1,16 @@
 <template>
-  <div class="gridList">
-    <div v-for="item in list" :key="item.id" class="listitem">
-      <div class="list_img">
-        <img :src="item.img">
-      </div>
-      <div class="list_text">
-        <h2>{{ item.title }}</h2>
-        <p class="moreHidden moreHidden_3">{{ item.introduce }}</p>
-      </div>
+  <div class="grid-container">
+    <div class="gridList">
+      <div v-for="item in list" :key="item.id" class="listitem">
+        <div class="list_img">
+          <img :src="item.img">
+        </div>
+        <div class="list_text">
+          <h2>{{ item.title }}</h2>
+          <p class="moreHidden moreHidden_3">{{ item.introduce }}</p>
+        </div>
 
+      </div>
     </div>
   </div>
 </template>
@@ -29,6 +31,10 @@ export default {
 </script>
 
 <style lang="scss">
+
+.grid-container{
+  width: 100%;
+}
 
 .gridList{
     margin:79px 176px 160px 180px;

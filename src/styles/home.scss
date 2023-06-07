@@ -86,9 +86,10 @@
 
     .banner {
         .el-carousel {
-            height: 720px !important;
+            // height: 720px !important;
             .el-carousel__container {
-                height: 100%;
+                padding-top: percentage(720/1920);
+                position: relative;
             }
         }
 
@@ -99,6 +100,10 @@
 
         img {
             width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: auto !important;
         }
     }
 
@@ -111,7 +116,8 @@
 
         .solutionContentBox {
             display: flex;
-            margin: 0 auto;
+            width: 100%;
+            justify-content: space-between;
 
             // .solutionBoxList:hover  .deails {
             //     background-color: $bgcolor;
@@ -138,7 +144,7 @@
 
             .solutionBoxList {
                 width: 500px;
-                margin-right: 32px;
+                // margin-right: 32px;
                 border: 1px solid #D8DFE9;
 
                 transform: translateY(0px);
@@ -422,8 +428,6 @@
                 display: none !important;
             }
 
-
-
             .productImgBox_img {
                 width: 960px;
                 height: 512px;
@@ -433,9 +437,6 @@
                 }
             }
         }
-
-
-
     }
 
     .newBox {

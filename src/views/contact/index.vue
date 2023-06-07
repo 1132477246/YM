@@ -36,45 +36,47 @@
 
     <Title :title-arry="['在线留言','Online Message']" />
 
-    <div class="contactus_bot">
-      <div class="bot_top">
-        <el-form ref="dataform" :model="dataForm" :rules="dataRules">
-          <el-row :gutter="20">
-            <el-col :span="8">
-              <el-form-item label="姓名" prop="personname">
-                <div class="content">
-                  <img src="@/assets/contact/Frame@2x.png" alt="">
-                  <el-input v-model="dataForm.personname" size="medium" placeholder="请留下您的姓名" />
-                </div>
-              </el-form-item>
-            </el-col>
-            <el-col :span="8">
-              <div class="content">
-                <el-form-item label="电话" prop="phone">
-                  <img src="@/assets/contact/Frame_1@2x.png" alt="">
-                  <el-input v-model="dataForm.phone" placeholder="18501111111" />
-                </el-form-item>
-              </div>
-            </el-col>
-            <el-col :span="8">
-              <div class="content">
-                <el-form-item label="邮箱" prop="mail">
-                  <img src="@/assets/contact/email_2@2x.png" alt="">
-                  <el-input v-model="dataForm.mail" placeholder="请留下您的邮箱" />
-                </el-form-item>
-              </div>
-            </el-col>
-          </el-row>
-          <div class="content">
-            <el-form-item label="意见反馈" prop="feedbackcontent">
-              <img class="remark" src="@/assets/contact/Frame_2@2x.png" alt="">
-              <el-input v-model="dataForm.feedbackcontent" type="textarea" :rows="10" placeholder="请输入您想说的..." />
-            </el-form-item>
-          </div>
-        </el-form>
-        <p>{{ notice }}</p>
-        <div class="bot_btn" @click="handleSubmit">立即提交</div>
 
+    <div class="contactus_bot-container">
+      <div class="contactus_bot">
+        <div class="bot_top">
+          <el-form :model="dataForm">
+            <el-row :gutter="20">
+              <el-col :span="8">
+                <el-form-item label="姓名" prop="name">
+                  <div class="content">
+                    <img src="@/assets/contact/Frame@2x.png" alt="">
+                    <el-input v-model="dataForm.name" size="medium" placeholder="请留下您的姓名" />
+                  </div>
+                </el-form-item>
+              </el-col>
+              <el-col :span="8">
+                <div class="content">
+                  <el-form-item label="电话" prop="tel">
+                    <img src="@/assets/contact/Frame_1@2x.png" alt="">
+                    <el-input v-model="dataForm.tel" placeholder="18501111111" />
+                  </el-form-item>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="content">
+                  <el-form-item label="邮箱" prop="email">
+                    <img src="@/assets/contact/email_2@2x.png" alt="">
+                    <el-input v-model="dataForm.email" placeholder="请留下您的邮箱" />
+                  </el-form-item>
+                </div>
+              </el-col>
+            </el-row>
+            <div class="content">
+              <el-form-item label="意见反馈" prop="remark">
+                <img class="remark" src="@/assets/contact/Frame_2@2x.png" alt="">
+                <el-input v-model="dataForm.remark" type="textarea" :rows="10" placeholder="请输入您想说的..." />
+              </el-form-item>
+            </div>
+          </el-form>
+          <p>{{ notice }}</p>
+          <div class="bot_btn">立即提交</div>
+        </div>
       </div>
     </div>
 
