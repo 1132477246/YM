@@ -12,6 +12,9 @@
         }
     }
     .contactus_mid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin:80px 178px 160px;
         .grid{
             margin-top: 32px;
@@ -71,7 +74,13 @@
         }
 
     }
+    .contactus_bot-container{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
     .contactus_bot{
+      width: 100%;
       margin:80px 178px 0;
       .el-form-item--medium .el-form-item__label{
         // width: 48px;
@@ -112,7 +121,7 @@
           font-family: Roboto, Roboto-Regular;
           font-weight: 400;
           text-align: LEFT;
-          color: #afb9c4;
+          // color: #afb9c4;
         }
         .el-textarea{
           background: #ffffff;
@@ -126,7 +135,7 @@
           font-family: Roboto, Roboto-Regular;
           font-weight: 400;
           text-align: LEFT;
-          color: #afb9c4;
+          // color: #afb9c4;
         }
       }
       p{

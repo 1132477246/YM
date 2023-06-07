@@ -101,7 +101,7 @@
 
     <div class="newBox container">
       <Title :title-arry="['新闻咨询', 'News']" />
-      <div>
+      <div class="newBox_content">
         <ul class="newBox_ul">
           <li v-for="item in newBoxOne " :key="item.index" class="newBox_ul_li" @click="showDetails(item.id)">
             <div class="newBox_img">

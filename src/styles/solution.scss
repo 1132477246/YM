@@ -5,14 +5,17 @@
         position: relative;
         margin-bottom: 160px;
         .el-carousel{
-            height: 800px !important;
-            .el-carousel__container{
-                height: 100%;
-            }
-        }
-        img{
-            width: 1919px;
-            height: 800px;
+            position: relative;
+            .el-carousel__container {
+                padding-top: percentage(720/1920);
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: auto !important;
+                }
+                }
         }
         .banner_text{
             position: absolute;
@@ -22,7 +25,7 @@
             h4{
                 // width: 768px;
                 // height: 117px;
-                font-size: 96px;
+                font-size: 76px;
                 font-family: Montserrat, Montserrat-Medium;
                 font-weight: 500;
                 text-align: left;
@@ -32,7 +35,7 @@
             p{
                 max-width: 768px;
                 // height: 144px;
-                font-size: 48px;
+                font-size: 38px;
                 font-family: Montserrat, Montserrat-Regular;
                 font-weight: 400;
                 text-align: left;
@@ -44,7 +47,7 @@
         }
         .banner_btn{
             margin-top: 48px;
-            max-width: 161px;
+            max-width: 201px;
             padding: 16px 0;
             // height: 62px;
             background: $bgcolor;
@@ -64,9 +67,10 @@
                 letter-spacing: -0.01px;
             }
             img{
-                width: 24px;
-                height: 24px;
-                margin-left:12px;
+                position: relative !important;
+                width: 24px !important;
+                height: 24px !important;
+                margin-left:12px !important;
             }
         }
         .banner_btn:hover{

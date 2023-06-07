@@ -17,7 +17,7 @@
   .solutionContentBox{
     flex-wrap: wrap !important;
     flex-direction: row !important;
-    justify-content: center;
+    justify-content: center !important;
     .solutionBoxList:nth-child(odd) {
       margin-bottom: 20px !important;
     }

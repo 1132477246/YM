@@ -34,7 +34,10 @@ export default {
 
 <style lang="scss">
   .tablelist{
-    margin:0 178px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // margin:0 178px;
     margin-bottom: 153px;
     .listitem{
         display: flex;

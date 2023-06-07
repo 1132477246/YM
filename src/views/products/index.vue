@@ -2,11 +2,13 @@
   <div class="products">
     <div class="products_header">
       <div class="header_img">
-        <img src="@/assets/about/banners1.png">
-      </div>
-      <div class="header_title">
-        <h2>{{ title }}</h2>
-        <p class="moreHidden">{{ introduce }}</p>
+        <div class="header-img-container">
+          <img src="@/assets/about/banners1.png">
+          <div class="header_title">
+            <h2>{{ title }}</h2>
+            <p class="moreHidden">{{ introduce }}</p>
+          </div>
+        </div>
       </div>
     </div>
     <Title :title-arry="['产品简介', 'Product Introduction']" />
