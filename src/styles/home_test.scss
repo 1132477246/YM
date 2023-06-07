@@ -1,59 +1,76 @@
-// $minWidth:1440px;
-// @media (min-width: $minWidth) {
-//   .homeContent {
-//     .banner {
-//       margin-top: 5.20833rem !important;
-//       .el-carousel {
-//         height: 100% !important;
-//         position: relative;
-//         .el-carousel__container {
-//             padding-top: percentage(720/1920);
-//         }
-//       }
+$minWidth:1440px;
+@media (min-width: $minWidth) {
+  .homeContent {
+    .banner {
+      margin-top: 5.20833rem !important;
+      .el-carousel {
+        height: 100% !important;
+        position: relative;
+        .el-carousel__container {
+            padding-top: percentage(720/1920);
+        }
+      }
     
-//       // width: 100%;
-//       // height: 51.43rem;
-//       margin-top: 100px;
-//       margin-bottom: 160px;
+      // width: 100%;
+      // height: 51.43rem;
+      margin-top: 100px;
+      margin-bottom: 160px;
     
-//       img {
-//           width: 100%;
-//           position: absolute;
-//           top: 0;
-//           left: 0;
-//       }   
-//     }
-//     .productBox{
-//       .container{
-//         max-width: 1380px !important;
-//       }
-//       .productBoxContent{
-//         max-width: 1400px !important;
-//         margin: 0 auto;
-//       }
-//       .textBox{
-//         width: 50%;
-//       }
-//       .productImgBox_img{
-//         width: 50%;
-//         height: auto !important;
-//       }
-//     }
-//   }
+      img {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+      }   
+    }
+    .productBox{
+      .container{
+        max-width: 1380px !important;
+      }
+      .productBoxContent{
+        max-width: 1400px !important;
+        margin: 0 auto;
+      }
+      .textBox{
+        width: 50%;
+      }
+      .productImgBox_img{
+        width: 50%;
+        height: auto !important;
+      }
+    }
+  }
 
-//   .footerBox {
-//     overflow: hidden;
-//   }
+  .footerBox {
+    overflow: hidden;
+  }
+
+  .newBox{
+    width: $minWidth !important;
+    .newBox_ul{
+      justify-content: center !important;
+      li {
+        width: 600px !important;
+        .newBox_mainText{
+          width: 80% !important;
+          line-height: 18px !important;
+        }
+      }
+    }
+    .newBox_ul_tow{
+      justify-content: center !important;
+    }
+  }
   
-// }
+}
 
-// .productBox{
-//   .textBox{
-//     width: 50% !important;
-//   }
-//   .productImgBox_img{
-//     width: 50% !important;
-//     height: auto !important;
-//   }
-// }
+.productBox{
+  .textBox{
+    width: 50% !important;
+  }
+  .productImgBox_img{
+    width: 50% !important;
+    height: auto !important;
+  }
+}
 
