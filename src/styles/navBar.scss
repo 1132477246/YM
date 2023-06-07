@@ -1,3 +1,17 @@
+.navelDropdownMenu{
+
+    // position: absolute!important;
+  
+    // min-width: 222px;
+  
+    // left: auto!important;
+  
+    // right: 0;
+  
+  
+  
+  }
+
 .navMain{
 
     position: fixed;
@@ -68,7 +82,31 @@
     // }
    
     .navlistLi{
-        
+       .navlistLi_dropdown{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .el-dropdown-link{
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropDownHover:hover i{
+            transform: rotate(180deg);
+            transition: all 0.3s;
+        }
+       }
+        // .el-dropdown-menu__item{
+  
+        // }
+        color: #ffffff;
+        .el-dropdown{
+            font-size: inherit;
+            color: inherit;
+            font-weight: inherit;
+        }
         position: relative;
         .navlistChildren{
             /*通过hover选择器来显示菜单，此处默认为隐藏*/
@@ -130,10 +168,12 @@
                 height: 100%;
                 display: flex;
                 a{
-                    display: inline-block;
-                 
-                    color: #ffffff;
+                    display: flex;
+                    height: 100%;
+                  
                     text-decoration: none;
+                    justify-content: center;
+                    align-items: center;
                 }
                 // margin-right: 160px;
                 // @media (min-width: 1200px) {
