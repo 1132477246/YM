@@ -1,7 +1,9 @@
 <template>
   <div class="gridList">
     <div v-for="item in list" :key="item.id" class="listitem">
-      <img :src="item.img">
+      <div class="list_img">
+        <img :src="item.img">
+      </div>
       <div class="list_text">
         <h2>{{ item.title }}</h2>
         <p class="moreHidden moreHidden_3">{{ item.introduce }}</p>
@@ -27,12 +29,6 @@ export default {
 </script>
 
 <style lang="scss">
-@media (max-width: 400px) {
-    .banner_btn {
-        min-width: 80px !important;
-        padding: 10px 0px;
-    }
-}
 
 .gridList{
     margin:79px 176px 160px 180px;
@@ -46,13 +42,18 @@ export default {
       align-items: center;
       // justify-content: space-around;
       margin-bottom: 33px;
+      transition: all 0.3s;
       width: 500px;
-
-      img{
+      .list_img{
         width: 500px;
         height: 334px;
         background: #e5e5e5;
+        img{
+          width: 100%;
+          height: 100%;
+        }
       }
+
       .list_text{
         padding-bottom: 56px;
         // width: 500px;
@@ -85,7 +86,7 @@ export default {
     }
     .listitem:hover{
       // transform: translateY(-10px);
-      // transition:  0.1s;
+      transition: all 0.3s;
       // transition-timing-function: ease-in-out;
       cursor: pointer;
       box-shadow: 0px 0px 60px 0px rgba(25,90,148,0.15);

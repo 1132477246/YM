@@ -7,19 +7,19 @@
     <div class="news_content">
       <div v-for="item in newsList" :key="item.id" class="news_list">
         <div class="news_list_left">
-          <img :src="item.icon">
-          <span class="news_time">{{ item.time }}</span>
+          <img src="@/assets/news/time_5@2x.png">
+          <span class="news_time">{{ item.createtime?item.createtime.substr(0,10):'' }}</span>
         </div>
         <div class="news_list_mid">
-          <div class="news_title">{{ item.title }}</div>
-          <p class="news_des moreHidden moreHidden_3">{{ item.describtion }}</p>
+          <div class="news_title">{{ item.newstitle }}</div>
+          <p class="news_des moreHidden moreHidden_3">{{ item.shortnewscontent }}</p>
           <div class="news_btn">
-            <div class="btn" @click="showDetails">查看详情</div>
+            <div class="btn" @click="showDetails(item.id)">查看详情</div>
             <img src="@/assets/news/small_right_blue_5@2x.png">
           </div>
         </div>
         <div class="news_list_right">
-          <img :src="item.img" alt="">
+          <img :src="item.newsimgurl?ip+item.newsimgurl:baseurl" alt="">
         </div>
       </div>
     </div>
@@ -29,58 +29,54 @@
       background
       layout="prev, pager, next"
       :total="total"
+      :current-page.sync="listQuery.pagenum"
+      :page-size="listQuery.pagesize"
+      @size-change="pagination"
+      @current-change="pagination"
     />
   </div>
 </template>
 
 <script>
+import { newsList } from '@/api/news'
+
 export default {
   name: 'NewsIndex',
   data() {
     return {
       total: 100,
-      newsList: [
-        { id: 0,
-          title: '今日扬铭科技获得一亿元融资',
-          describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/about/24.png'),
-          time: '06.01/2023',
-          icon: require('@/assets/news/time_5@2x.png')
-        },
-        { id: 1,
-          title: '今日扬铭科技获得一亿元融资',
-          describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/about/24.png'),
-          time: '06.01/2023',
-          icon: require('@/assets/news/time_5@2x.png')
-        },
-        { id: 2,
-          title: '今日扬铭科技获得一亿元融资',
-          describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/about/24.png'),
-          time: '06.01/2023',
-          icon: require('@/assets/news/time_5@2x.png')
-        },
-        { id: 3,
-          title: '今日扬铭科技获得一亿元融资',
-          describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/about/24.png'),
-          time: '06.01/2023',
-          icon: require('@/assets/news/time_5@2x.png')
-        },
-        { id: 4,
-          title: '今日扬铭科技获得一亿元融资',
-          describtion: '扬铭科技是一家计算机软硬件销售商。业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、计算机、软件及辅助设备、电子产品、五金交电、工艺品；生产通讯设备、机械设备业务涵盖技术开发、技术咨询、技术转让、技术服务；销售通讯设备、销售通讯设备...',
-          img: require('@/assets/about/24.png'),
-          time: '06.01/2023',
-          icon: require('@/assets/news/time_5@2x.png')
-        }
-      ]
+      newsList: [],
+      listQuery: {
+        pagenum: 1,
+        pagesize: 10
+      },
+      baseurl: require('@/assets/about/24.png')
+
     }
   },
+  computed: {
+    ip() {
+      const len = process.env.VUE_APP_BASE_SERVICE.length
+      return process.env.VUE_APP_BASE_SERVICE.substring(0, len - 5)
+    }
+  },
+  created() {
+    this.getnewsList()
+  },
   methods: {
-    showDetails() {
-      this.$router.push('/news/details')
+    showDetails(id) {
+      this.$router.push({ path: '/news/details', query: { id: id }})
+    },
+    getnewsList() {
+      newsList(this.listQuery).then(res => {
+        if (res.code === 200) {
+          this.newsList = res.data.object
+          this.total = res.data.total
+        }
+      })
+    },
+    pagination() {
+      this.getnewsList()
     }
   }
 }
