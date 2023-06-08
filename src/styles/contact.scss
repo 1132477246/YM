@@ -92,6 +92,9 @@
         color: #1d2129;
         line-height: 36px;
       }
+      .marginTop{
+        margin-top: 80px;
+      }
       .content{
           position: relative;
         img{
@@ -104,7 +107,7 @@
         }
         .remark{
           position: absolute;
-          top: 14%;
+          top: 15%;
           left: 16px;
         }
         .el-input{
@@ -121,7 +124,7 @@
            
           font-weight: 400;
           text-align: LEFT;
-          // color: #afb9c4;
+          color: #1D2129;
         }
         .el-textarea{
           background: #ffffff;
@@ -132,11 +135,11 @@
         .el-textarea__inner{
           padding-left:48px;
           font-size: 22px;
-           
           font-weight: 400;
           text-align: LEFT;
-          // color: #afb9c4;
+          color: #1D2129;
         }
+        
       }
       p{
         margin-top: 80px;
