@@ -100,7 +100,7 @@
     </div>
 
     <div class="newBox container">
-      <Title :title-arry="['新闻咨询', 'News']" />
+      <Title :title-arry="['新闻资讯', 'News']" />
       <div class="newBox_content">
         <ul class="newBox_ul">
           <li v-for="item in newBoxOne " :key="item.index" class="newBox_ul_li" @click="showDetails(item.id)">
@@ -122,7 +122,7 @@
           <li v-for="item in newBoxTow " :key="item.index" class="newBox_ul_li_tow" @click="showDetails(item.id)">
             <div class="newBox_icon" />
             <div class="newBox_text_box_tow">
-              <div class="newBox_title_tow oneHidden">{{ item.newstitle }}</div>
+              <div class="newBox_title_tow oneHidden newBox_text_box_tow_title">{{ item.newstitle }}</div>
 
               <div class="newBox_time_box_tow">
                 <img src="@/assets/img/time.png" alt="">

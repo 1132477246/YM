@@ -15,7 +15,7 @@
 
             <el-dropdown v-if="item.children" class="navlistLi_dropdown" trigger="hover">
               <span class="el-dropdown-link dropDownHover">
-                {{ item.title }} <i class="el-icon-arrow-down el-icon--right " />
+                {{ item.title }} <img class="downIcon" src="@/assets/img/nav_down.png" alt="">
               </span>
               <el-dropdown-menu slot="dropdown" class="navelDropdownMenu">
                 <el-dropdown-item v-for="items in item.children " :key="items.id" class="dropdownChildren">
