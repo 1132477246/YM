@@ -15,7 +15,7 @@
 
             <el-dropdown v-if="item.children" class="navlistLi_dropdown" trigger="hover">
               <span class="el-dropdown-link dropDownHover">
-                {{ item.title }} <i class="el-icon-arrow-down el-icon--right " />
+                {{ item.title }} <img class="downIcon" src="@/assets/img/nav_down.png" alt="">
               </span>
               <el-dropdown-menu slot="dropdown" class="navelDropdownMenu">
                 <el-dropdown-item v-for="items in item.children " :key="items.id" class="dropdownChildren">
@@ -85,7 +85,7 @@ export default {
         ] },
         { id: '2', title: '产品介绍', children: [
           { id: '2-1', title: '卫星信号分析', path: '/products/index' },
-          { id: '3-2', title: '通信信号分析', path: '/products/index' },
+          { id: '2-2', title: '通信信号分析', path: '/products/index' },
           { id: '2-3', title: '训练系统', path: '/products/index' },
           { id: '2-4', title: 'AI平台开发', path: '/products/index' }
         ] },

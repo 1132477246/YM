@@ -3,7 +3,7 @@
     <div class="products_header">
       <div class="header_img">
         <div class="header-img-container">
-          <img src="@/assets/about/banners1.png">
+          <img :src="bannerImg">
           <div class="header_title">
             <h2>{{ title }}</h2>
             <p class="moreHidden">{{ introduce }}</p>
@@ -47,7 +47,36 @@ export default {
         { id: '4', title: '特点四', introduce: '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时展示全部内容' },
         { id: '5', title: '特点五', introduce: '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时展示全部内容' },
         { id: '6', title: '特点六', introduce: '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时展示全部内容' }
+      ],
+      bannerObj: [
+        {
+          id: '2-1',
+          img: require('@/assets/about/banner11_1.png')
+        },
+        {
+          id: '2-2',
+          img: require('@/assets/about/banner12_2.png')
+        },
+        {
+          id: '2-3',
+          img: require('@/assets/about/banner13_3.png')
+        }, {
+          id: '2-4',
+          img: require('@/assets/about/banner14_4.png')
+        }
       ]
+    }
+  },
+  computed: {
+    bannerImg() {
+      const id = this.$route.query.id
+      let img
+      this.bannerObj.forEach(e => {
+        if (e.id === id) {
+          img = e.img
+        }
+      })
+      return img
     }
   }
 }

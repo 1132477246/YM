@@ -113,18 +113,17 @@ $minWidth:1680px;
             .banner-right-container{
               width: $minWidth !important;
             }
-            // img {
-            //   width: 100%;
-            //   position: absolute;
-            //   top: 0;
-            //   left: 0;
-            //   height: auto !important;
-            // }
         }
       }
     }
     .banner_text{
 
+      h4{
+        font-size: 56px !important;
+       }
+       p{
+        font-size: 28px !important;
+       }
     }
   }
 
@@ -150,7 +149,7 @@ $minWidth:1680px;
       img {
         position: relative !important;
         width: $minWidth !important;
-        height: 615px !important;
+        height: 705px !important;
       }
     }
     .header_title{

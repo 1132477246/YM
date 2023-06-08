@@ -52,15 +52,15 @@ export default {
       bannerObj: [
         {
           id: '1-1',
-          img: require('@/assets/solution/banner11.png')
+          img: require('@/assets/solution/banner1.png')
         },
         {
           id: '1-2',
-          img: require('@/assets/solution/banner11.png')
+          img: require('@/assets/solution/banner2.png')
         },
         {
           id: '1-3',
-          img: require('@/assets/solution/banner11.png')
+          img: require('@/assets/solution/banner3.png')
         }
       ],
       business: [
