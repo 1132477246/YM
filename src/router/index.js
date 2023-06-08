@@ -14,6 +14,7 @@ import contactRouter from './modules/contact'
 export default new Router({
   mode: 'history',
   base: '/homepage',
+  scrollBehavior: () => { return { x: 0, y: 0 } },
   routes: [
     {
       path: '/',

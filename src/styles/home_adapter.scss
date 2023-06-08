@@ -28,7 +28,7 @@
     }
     .solutionBoxList{
       
-      width: 60% !important;
+      width: 70% !important;
       height: auto !important;
       .img{
         width: 100% !important;
@@ -55,6 +55,15 @@
   .productBoxContent{
     height: var(--height) !important;
   }
+
+  .productBox {
+    .container {
+      width: auto !important;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
   .product_container{
     height: 100% !important;
     flex-direction: column;
@@ -127,19 +136,21 @@
       margin-right: 0px !important;
     }
     .newBox_title{
-      width: 90% !important;
+      width: 120px !important;
       line-height: 15px !important;
       height: 15px !important;
       font-size: 13px !important;
     }
     .newBox_mainText{
-      width: 80% !important;
+      width: 120px !important;
       font-size: 12px !important;
       line-height: 15px !important;
     }
     .newBox_img{
+      width: 60px !important;
+      height: auto !important;
       img{
-        width: 80px !important;
+        width: 100% !important;
         height: auto !important;
       }
     }

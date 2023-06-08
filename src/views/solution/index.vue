@@ -2,15 +2,18 @@
   <div class="solution">
     <div class="solution_banner">
       <el-carousel>
-        <el-carousel-item v-for="item in bannerObj" :key="item.id">
-          <img :src="item.img" alt="">
-          <div class="banner_text">
-            <h4>{{ bannerTemp.title }}</h4>
-            <p class="moreHidden">{{ bannerTemp.introduce }}</p>
-            <div class="banner_btn">
-              <span>立即试用</span>
-              <img :src="bannerTemp.icon" alt="">
+        <el-carousel-item v-for="item in bannerArray" :key="item.id">
+          <img src="@/assets/solution/banner-back.png" alt="">
+          <div class="banner-right-container">
+            <div class="banner_text">
+              <h4>{{ bannerTemp.title }}</h4>
+              <p class="moreHidden">{{ bannerTemp.introduce }}</p>
+              <div class="banner_btn">
+                <span>立即试用</span>
+                <img :src="bannerTemp.icon" alt="">
+              </div>
             </div>
+            <img class="banner-rightImg" :src="item.img">
           </div>
         </el-carousel-item>
       </el-carousel>
@@ -49,15 +52,15 @@ export default {
       bannerObj: [
         {
           id: '1-1',
-          img: require('@/assets/solution/banner1.png')
+          img: require('@/assets/solution/banner11.png')
         },
         {
           id: '1-2',
-          img: require('@/assets/solution/banner2.png')
+          img: require('@/assets/solution/banner11.png')
         },
         {
           id: '1-3',
-          img: require('@/assets/solution/banner3.png')
+          img: require('@/assets/solution/banner11.png')
         }
       ],
       business: [
@@ -80,16 +83,19 @@ export default {
     }
   },
   computed: {
-    bannerImg() {
+    bannerArray() {
       const id = this.$route.query.id
-      let img
+      let tmp
       this.bannerObj.forEach(e => {
         if (e.id === id) {
-          img = e.img
+          tmp = e
         }
       })
-      return img
+      return [tmp]
     }
+  },
+  mounted() {
+
   }
 }
 </script>

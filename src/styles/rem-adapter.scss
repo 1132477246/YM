@@ -1,4 +1,4 @@
-$minWidth:1650px;
+$minWidth:1680px;
 @media (min-width: $minWidth) {
   .homeContent {
     .banner {
@@ -104,15 +104,22 @@ $minWidth:1650px;
         position: relative;
         .el-carousel__container {
             padding-top: 0px !important;
-            width: $minWidth !important;
-            height: 615px !important;
-            img {
-              width: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: auto !important;
+            width: 100% !important;
+            height: 705px !important;
+            .el-carousel__item{
+              display: flex !important;
+              justify-content: center !important;
             }
+            .banner-right-container{
+              width: $minWidth !important;
+            }
+            // img {
+            //   width: 100%;
+            //   position: absolute;
+            //   top: 0;
+            //   left: 0;
+            //   height: auto !important;
+            // }
         }
       }
     }
@@ -237,20 +244,6 @@ $minWidth:1650px;
   }
 }
 
-@media (max-width: 900px) {
-  .about{
-    height: calc(100vh - 100px);
-  }
-}
-
-@media (max-width: 1000px) {
-  .newsInfo{
-    height: calc(100vh - 100px);
-  }
-}
-
-@media (max-width: 800px) {
-  .products{
-    height: 100vh !important;
-  }
+.app-main{
+  min-height: 100vh !important;
 }

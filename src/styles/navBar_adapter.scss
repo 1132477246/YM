@@ -128,7 +128,14 @@
   .el-collapse-item__header {
     padding: 20px 50px !important;
     height: auto;
-
+    font-size: 13px !important;
+  }
+  .el-collapse-item__content{
+    ul{
+      li{
+        font-size: 12px !important;
+      }
+    }
   }
 }
 }
