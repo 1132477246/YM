@@ -75,17 +75,17 @@ export default {
           font-weight: 700;
           text-align: CENTER;
           color: #1d2129;
-          // line-height: 48px;
+          line-height: 48px;
         }
         p{
           margin:24px auto 0;
           padding: 0 46px;
           opacity: 0.5;
           font-size: 22px;
-
           font-weight: 500;
           text-align: CENTER;
           color: #45484e;
+          line-height: 33px;
         }
       }
 

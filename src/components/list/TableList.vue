@@ -60,7 +60,7 @@ export default {
             font-weight: 400;
             text-align: left;
             color: #4e5969;
-            // line-height: 48px;
+            line-height: 48px;
         }
     }
 }

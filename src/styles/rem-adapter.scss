@@ -95,31 +95,31 @@ $minWidth:1650px;
     margin-right: 15% !important;
   }
 
-  .solution {
-    .solution_banner {
-      .el-carousel {
-        width: 100% !important;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        .el-carousel__container {
-            padding-top: 0px !important;
-            width: $minWidth !important;
-            height: 615px !important;
-            img {
-              width: 100%;
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: auto !important;
-            }
-        }
-      }
-    }
-    .banner_text{
+  // .solution {
+  //   .solution_banner {
+  //     .el-carousel {
+  //       width: 100% !important;
+  //       display: flex;
+  //       justify-content: center;
+  //       position: relative;
+  //       .el-carousel__container {
+  //           padding-top: 0px !important;
+  //           width: $minWidth !important;
+  //           height: 615px !important;
+  //           img {
+  //             width: 100%;
+  //             position: absolute;
+  //             top: 0;
+  //             left: 0;
+  //             height: auto !important;
+  //           }
+  //       }
+  //     }
+  //   }
+  //   .banner_text{
 
-    }
-  }
+  //   }
+  // }
 
   .grid-container{
     display: flex;
@@ -128,6 +128,32 @@ $minWidth:1650px;
   
   .gridList{
     width: 1440px !important;
+  }
+
+  .solution{
+    .banner_img{
+      width: 100%;
+      padding-top: 0px !important;
+      display: flex;
+      justify-content: center;
+      .banner_img-container{
+        width: $minWidth !important;
+        position: relative !important;
+      }
+      img {
+        position: relative !important;
+        width: $minWidth !important;
+        height: 615px !important;
+      }
+    }
+    .banner_text{
+     h4{
+      font-size: 56px !important;
+     }
+     p{
+      font-size: 28px !important;
+     }
+    }
   }
 
   .products{
