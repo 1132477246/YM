@@ -7,7 +7,8 @@
         .el-carousel{
             position: relative;
             .el-carousel__container {
-                padding-top: percentage(800/1920);
+                // padding-top: percentage(800/1920);
+                height: 800px;
                 img {
                     width: 100%;
                     position: absolute;

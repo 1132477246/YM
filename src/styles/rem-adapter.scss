@@ -1,8 +1,8 @@
-$minWidth:1680px;
-@media (min-width: $minWidth) {
+$minWidth:1920px;
+@media (min-width: 1440px) {
   .homeContent {
     .banner {
-      margin-top: 5.20833rem !important;
+      // margin-top: 5.20833rem !important;
       .el-carousel {
         width: 100% !important;
         display: flex;
@@ -11,7 +11,7 @@ $minWidth:1680px;
         .el-carousel__container {
             padding-top: 0px !important;
             width: $minWidth !important;
-            height: 615px !important;
+            height: 720px !important;
         }
       }
     
@@ -29,29 +29,14 @@ $minWidth:1680px;
     }
     .productBox{
       .container{
-        max-width: 1380px !important;
+        max-width: $minWidth !important;
       }
       .productBoxContent{
         width: 100% !important;
-        height: 372px !important;
       }
       .productImgBox{
-        max-width: 1400px !important;
+        width: 1920px !important;
         margin: 0 auto;
-      }
-      .textBox{
-        width: 50%;
-        padding: 50px 0px 56px 178px !important;
-        .productBoxContent_details {
-          margin-top: 19px !important;
-        }
-        .characteristic_label_ul{
-          height: auto !important;
-        }
-      }
-      .productImgBox_img{
-        width: 50%;
-        height: auto !important;
       }
     }
   }
@@ -71,7 +56,7 @@ $minWidth:1680px;
       width: $minWidth !important;
       justify-content: center !important;
       li {
-        width: 600px !important;
+        // width: 960px !important;
         .newBox_mainText{
           width: 80% !important;
           line-height: 18px !important;
@@ -80,28 +65,11 @@ $minWidth:1680px;
     }
     .newBox_ul_tow{
       width: $minWidth !important;
-      padding-left: 220px !important;
-      .newBox_ul_li_tow{
-        width: 600px !important;
-      }
-      .newBox_title_tow{
-        width: 60% !important;
-      }
-      .newBox_time_box_tow{
-        width: 30% !important;
-        flex: 0 0 auto !important;
-        justify-content: flex-end !important;
-        .newBox_time{
-          width: auto !important;
-        }
-      }
+      padding-left: 180px !important;
     }
   }
 
-  .navlist{
-    margin-left: 18% !important;
-    margin-right: 18% !important;
-  }
+ 
 
   .solution {
     .solution_banner {
@@ -113,7 +81,7 @@ $minWidth:1680px;
         .el-carousel__container {
             padding-top: 0px !important;
             width: 100% !important;
-            height: 705px !important;
+            height: 800px !important;
             .el-carousel__item{
               display: flex !important;
               justify-content: center !important;
@@ -141,7 +109,7 @@ $minWidth:1680px;
   }
   
   .gridList{
-    width: 1440px !important;
+    width: $minWidth !important;
   }
 
   .products{
@@ -157,7 +125,7 @@ $minWidth:1680px;
       img {
         position: relative !important;
         width: $minWidth !important;
-        height: 705px !important;
+        height: 720px !important;
       }
     }
     .header_title{
@@ -206,17 +174,16 @@ $minWidth:1680px;
   // }
 }
 
-@media (min-width: 1440px) {
-  .navlist{
-    margin-left: 15% !important;
-    margin-right: 15% !important;
-  }
-}
+// @media (min-width: 1440px) {
+//   .navlist{
+//     margin-left: 15% !important;
+//     margin-right: 15% !important;
+//   }
+// }
 
-@media (min-width: 1800px) {
+@media (min-width: 1680px) {
   .navlist{
-    margin-left: 18% !important;
-    margin-right: 18% !important;
+    margin-right: 30vw !important;
   }
 }
 
@@ -230,17 +197,17 @@ $minWidth:1680px;
 //   }
 // }
 
-.newBox_ul_li_tow{
-  width: 39.5rem !important;
-  .newBox_time_box_tow{
-    width: 40% !important;
-    flex: 0 0 auto !important;
-    justify-content: flex-end !important;
-  }
-  .newBox_time{
-    width: auto !important;
-  }
-}
+// .newBox_ul_li_tow{
+//   width: 39.5rem !important;
+//   .newBox_time_box_tow{
+//     width: 40% !important;
+//     flex: 0 0 auto !important;
+//     justify-content: flex-end !important;
+//   }
+//   .newBox_time{
+//     width: auto !important;
+//   }
+// }
 
 // .product_container{
 //   .textBox{
@@ -252,5 +219,5 @@ $minWidth:1680px;
 // }
 
 .app-main{
-  min-height: 100vh !important;
+  min-height: max(100vh, 100vw) !important;
 }

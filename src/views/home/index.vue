@@ -376,7 +376,7 @@ export default {
       this.productContent = this.productObjContent[val]
     },
     calcCarsouelHeight() {
-      const height = 230
+      const height = 270
       const imgH = window.document.body.clientWidth * (512 / 960)
       this.carouselHeight = height + imgH
       console.log(this.carouselHeight)

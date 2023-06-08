@@ -89,9 +89,9 @@
             cursor: pointer;
         }
         .el-carousel {
-            // height: 720px !important;
             .el-carousel__container {
-                padding-top: percentage(720/1920);
+                // padding-top: percentage(720/1920);
+                height: 720px !important;
                 position: relative;
             }
         }
@@ -306,7 +306,7 @@
 
     .productBoxContent {
         position: relative;
-        height: 602px;
+        height: 512px;
         width: 100%;
         background-color: #f2f4f7;
         .product_container{
@@ -316,7 +316,7 @@
         }
         .textBox {
             flex: 1 1 auto;
-            padding: 80px 0px 0px 178px;
+            padding: 60px 0px 0px 178px;
             background: #f2f4f7;
             z-index: 3;
 
@@ -340,7 +340,7 @@
                 font-weight: 400;
                 text-align: LEFT;
                 color: #4e5969;
-                line-height: 33px;
+                line-height: 30px;
                 margin-bottom: 32px;
             }
 
@@ -403,7 +403,7 @@
             }
 
             .productBoxContent_details {
-                margin-top: 30px;
+                margin-top: 19px;
 
 
                 font-size: 18px;
@@ -558,11 +558,11 @@
             flex-direction: row;
             flex-wrap: wrap;
             .newBox_ul_li_tow:nth-child(odd) {
-                margin-right: 60px;
+                // margin-right: 60px;
             }
 
             .newBox_ul_li_tow:nth-child(even) {
-                margin-right: 0px;
+                margin-left: 30px;
             }
 
             .newBox_ul_li_tow:hover { 
@@ -580,9 +580,10 @@
             .newBox_ul_li_tow {
                 align-items: center;
                 // float: left;
-                width: 736px;
+                width: 766px;
                 height: 36px;
                 padding: 0px 24px;
+                padding-right: 0px;
                 display: flex;
                 margin-bottom: 48px;
 

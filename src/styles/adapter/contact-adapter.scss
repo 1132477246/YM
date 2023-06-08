@@ -24,9 +24,12 @@
       }
     }
     .mid_right{
-      // width: ;
-      width: calc(100vw - 33vw) !important;
+      // width: calc(100vw - 33vw) !important;
+      width: 100% !important;
       height: 150px !important;
+    }
+    .right_container{
+      width: 100% !important;
     }
   }
   .contactus_bot{
@@ -48,6 +51,8 @@
       font-size: 11px !important;
       line-height: 30px !important;
       padding-left: 15px !important;
+      border-radius: 0 !important;
+      border: none !important;
     }
     .el-textarea__inner{
       font-size: 12px !important;
