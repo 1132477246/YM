@@ -100,14 +100,18 @@
         // height: 51.43rem;
         margin-top: 100px;
         margin-bottom: 160px;
-
-        img {
+        .banner-img-container{
             width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: auto !important;
+            height: 100%;
+            background: radial-gradient(#165dff, #200ba1);
+            display: flex;
+            justify-content: center;
+            img {
+                display: inline-block;
+                width: 100%;
+            }
         }
+        
     }
 
 
@@ -342,6 +346,7 @@
                 color: #4e5969;
                 line-height: 30px;
                 margin-bottom: 32px;
+                text-align: justify;
             }
 
             .characteristic {
@@ -526,7 +531,7 @@
                     .newBox_time_box {
 
                         display: flex;
-                        align-items: flex-end;
+                        align-items: center;
                         height: 30px;
 
                         img {
@@ -538,7 +543,7 @@
 
                         .newBox_time {
                           
-                            font-size: 12px;
+                            font-size: 16px;
                               
                             font-weight: normal;
 
@@ -619,7 +624,7 @@
                         }
 
                         .newBox_time {
-                            font-size: 12px;
+                            font-size: 16px;
                               
                             font-weight: normal;
 
@@ -637,7 +642,7 @@
         }
 
         .getAll {
-
+              
             span{
                 line-height: 30px;
                 display: flex;
@@ -646,13 +651,14 @@
             }
        
             margin: 0 auto;
+            margin-top: 83px;
             padding: 10px 24px;
             display: flex;
             color: #ffffff;
 
             img {
-                width: 20px;
-                height: 20px;
+                width: 24px;
+                height: 24px;
                 margin-left: 12px;
             }
         }
