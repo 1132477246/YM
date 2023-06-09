@@ -71,32 +71,39 @@ export default {
           },
           {
             path: '/solution/index',
-            name: '信号分析解决方案'
+            name: '信号分析解决方案',
+            id: '1-1'
           }, {
             path: '/solution/index',
-            name: '训练系统解决方案'
+            name: '训练系统解决方案',
+            id: '1-2'
           }, {
             path: '/solution/index',
-            name: '人工智能解决方案'
+            name: '人工智能解决方案',
+            id: '1-3'
           }
         ],
         product: [
           {
-            path: '/products/index',
+            path: '',
             name: '产品介绍'
           },
           {
             path: '/products/index',
-            name: '卫星信号分析'
+            name: '卫星信号分析',
+            id: '2-1'
           }, {
             path: '/products/index',
-            name: '通信信号分析'
+            name: '通信信号分析',
+            id: '2-2'
           }, {
             path: '/products/index',
-            name: '训练系统'
+            name: '训练系统',
+            id: '2-3'
           }, {
             path: '/products/index',
-            name: 'AI平台开发'
+            name: 'AI平台开发',
+            id: '2-4'
           }
         ],
         new: [
@@ -135,7 +142,7 @@ export default {
   },
   methods: {
     handleOpen(item) {
-      this.$router.push(item.path)
+      this.$router.push({ path: item.path, query: { id: item.id }})
     }
   }
 }

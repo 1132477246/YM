@@ -69,14 +69,14 @@ export default {
   },
   computed: {
     bannerImg() {
-      const id = this.$route.query.id
+      const id = this.$route.query.id || '2-1'
       let img
       this.bannerObj.forEach(e => {
         if (e.id === id) {
           img = e.img
         }
       })
-      return img
+      return img || this.bannerObj[0].img
     }
   }
 }
