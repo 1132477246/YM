@@ -4,7 +4,9 @@
       <!-- <img src="@/assets/img/banner.png" alt=""> -->
       <el-carousel>
         <el-carousel-item v-for="item in bannerObj" :key="item.index">
-          <img :src="ip+item.rotationchartimgurl" alt="" class="imgHover" @click="bannerClick(item)">
+          <div class="banner-img-container">
+            <img :src="ip+item.rotationchartimgurl" alt="" class="imgHover" @click="bannerClick(item)">
+          </div>
         </el-carousel-item>
       </el-carousel>
     </div>
