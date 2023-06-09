@@ -84,13 +84,14 @@ export default {
   },
   computed: {
     bannerArray() {
-      const id = this.$route.query.id
-      let tmp
+      const id = this.$route.query.id || '1-1'
+      let tmp = this.bannerObj[0]
       this.bannerObj.forEach(e => {
         if (e.id === id) {
           tmp = e
         }
       })
+      console.warn(tmp)
       return [tmp]
     }
   },
