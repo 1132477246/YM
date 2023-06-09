@@ -193,7 +193,12 @@
                         color: #1d2129;
 
                     }
-
+                    .overflowHidden{
+                        overflow: hidden; /* 超出隐藏 */
+                        text-overflow: ellipsis; /* 显示省略号 */
+                     
+                    }
+                    
                     .content {
                         min-height: 99px;
                         opacity: 0.5;
