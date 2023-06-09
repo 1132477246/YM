@@ -16,7 +16,7 @@
             <p><img src="@/assets/contact/address@2x.png"><span>{{ item.address }}</span></p>
           </div>
         </div>
-        <div>
+        <div class="right_container">
           <baidu-map
             class="mid_right"
             ak="K6RuD91GxkoGBmrR3KH3sAH3eLRIFO10"
@@ -53,7 +53,7 @@
                 <div class="content">
                   <el-form-item label="电话" prop="phone">
                     <img src="@/assets/contact/Frame_1@2x.png" alt="">
-                    <el-input v-model="dataForm.phone" placeholder="18501111111" />
+                    <el-input v-model="dataForm.phone" placeholder="请留下您的电话" />
                   </el-form-item>
                 </div>
               </el-col>
@@ -66,7 +66,7 @@
                 </div>
               </el-col>
             </el-row>
-            <div class="content">
+            <div class="content marginTop">
               <el-form-item label="意见反馈" prop="feedbackcontent">
                 <img class="remark" src="@/assets/contact/Frame_2@2x.png" alt="">
                 <el-input v-model="dataForm.feedbackcontent" type="textarea" :rows="10" placeholder="请输入您想说的..." />

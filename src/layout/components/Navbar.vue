@@ -85,7 +85,7 @@ export default {
         ] },
         { id: '2', title: '产品介绍', children: [
           { id: '2-1', title: '卫星信号分析', path: '/products/index' },
-          { id: '3-2', title: '通信信号分析', path: '/products/index' },
+          { id: '2-2', title: '通信信号分析', path: '/products/index' },
           { id: '2-3', title: '训练系统', path: '/products/index' },
           { id: '2-4', title: 'AI平台开发', path: '/products/index' }
         ] },
@@ -133,7 +133,7 @@ export default {
       }
       this.menuTitle = item.title
       if (item.path) {
-        this.$router.push(item.path)
+        this.$router.push({ path: item.path, query: { id: item.id }})
       }
     },
     dropDownVisibleChange(visiable) {

@@ -1,0 +1,25 @@
+// @import '../index.scss';
+@import '../element-variables.scss';
+
+$bgcolor: $--color-primary;
+$color: $--color-primary;
+
+@import './home_adapter.scss';
+
+@import './navBar_adapter.scss';
+
+@import './footer_adapter.scss';
+
+@import './about-adapter.scss';
+
+@import './contact-adapter.scss';
+
+@import './partners-adapter.scss';
+
+@import './solution_adapter.scss';
+
+@import './products_adapter.scss';
+
+@import './news_adapter.scss';
+
+@import './newsDetails_adapter.scss';

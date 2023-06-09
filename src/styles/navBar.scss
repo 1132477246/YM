@@ -36,13 +36,18 @@
     height: 100%;
     width: 100%;
 }
-.nav::after{
-    clear: both;
-    display: table;
-    content: " ";
-}
+
 .navlog{
     margin-left: 178px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
     div:first-child img{
         width: 32px;
         height: 32px;
@@ -52,7 +57,7 @@
        width: 128px;
        height: 32px;
     }
-    display: flex;
+    
    
 }
 // .navLogoImg{
@@ -80,7 +85,7 @@
         
        .navlistLi_dropdown{
         .downIcon{
-       
+            transition: all 0.3s;
             margin-left: 4px;
         }
         height: 100%;
@@ -143,8 +148,8 @@
     }
     // float: right;
     width: 100%;
-    margin-left: 352px;
-    margin-right: 178px;
+    margin-left: 252px;
+    margin-right: 500px;
     ul{
         width: 100%;
         display: flex;
@@ -187,9 +192,7 @@
             }
     }
 }
-.el-dropdown-menu{
-    top: 104px !important;
-}
+
 
 .el-popper .popper__arrow{
     border-width: 12px !important;

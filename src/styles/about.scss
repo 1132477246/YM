@@ -4,11 +4,13 @@
     .about_header{
         position: relative;
         .header_img{
-            width: 100%;
-            height: 720px;
+            padding-top: percentage(720/1920);
+            position: relative;
             img{
                 width: 100%;
-                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
         }
         .header_title{
@@ -62,7 +64,7 @@
                 font-weight: 400;
                 text-align: justify;
                 color: #4e5969;
-                // line-height: 48px;
+                line-height: 48px;
             }
         }
         .mid_img{
@@ -104,8 +106,7 @@
                     div{
                         // width: 110px;
                         // height: 66px;
-                        font-size: 44px;
-                           
+                        font-size: 32px;
                         font-weight: 400;
                         text-align: center;
                         color: #1d2129;
