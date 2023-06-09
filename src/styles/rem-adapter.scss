@@ -1,8 +1,8 @@
-$minWidth:1650px;
-@media (min-width: $minWidth) {
+$minWidth:1920px;
+@media (min-width: 1440px) {
   .homeContent {
     .banner {
-      margin-top: 5.20833rem !important;
+      // margin-top: 5.20833rem !important;
       .el-carousel {
         width: 100% !important;
         display: flex;
@@ -11,7 +11,7 @@ $minWidth:1650px;
         .el-carousel__container {
             padding-top: 0px !important;
             width: $minWidth !important;
-            height: 615px !important;
+            height: 720px !important;
         }
       }
     
@@ -29,21 +29,14 @@ $minWidth:1650px;
     }
     .productBox{
       .container{
-        max-width: 1380px !important;
+        max-width: $minWidth !important;
       }
       .productBoxContent{
         width: 100% !important;
       }
       .productImgBox{
-        max-width: 1400px !important;
+        width: 1920px !important;
         margin: 0 auto;
-      }
-      .textBox{
-        width: 50%;
-      }
-      .productImgBox_img{
-        width: 50%;
-        height: auto !important;
       }
     }
   }
@@ -63,7 +56,7 @@ $minWidth:1650px;
       width: $minWidth !important;
       justify-content: center !important;
       li {
-        width: 600px !important;
+        // width: 960px !important;
         .newBox_mainText{
           width: 80% !important;
           line-height: 18px !important;
@@ -72,54 +65,43 @@ $minWidth:1650px;
     }
     .newBox_ul_tow{
       width: $minWidth !important;
-      padding-left: 220px !important;
-      .newBox_ul_li_tow{
-        width: 600px !important;
-      }
-      .newBox_title_tow{
-        width: 60% !important;
-      }
-      .newBox_time_box_tow{
-        width: 30% !important;
-        flex: 0 0 auto !important;
-        justify-content: flex-end !important;
-        .newBox_time{
-          width: auto !important;
-        }
-      }
+      padding-left: 180px !important;
     }
   }
 
-  .navlist{
-    margin-left: 15% !important;
-    margin-right: 15% !important;
+ 
+
+  .solution {
+    .solution_banner {
+      .el-carousel {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        .el-carousel__container {
+            padding-top: 0px !important;
+            width: 100% !important;
+            height: 800px !important;
+            .el-carousel__item{
+              display: flex !important;
+              justify-content: center !important;
+            }
+            .banner-right-container{
+              width: $minWidth !important;
+            }
+        }
+      }
+    }
+    .banner_text{
+
+      h4{
+        font-size: 56px !important;
+       }
+       p{
+        font-size: 28px !important;
+       }
+    }
   }
-
-  // .solution {
-  //   .solution_banner {
-  //     .el-carousel {
-  //       width: 100% !important;
-  //       display: flex;
-  //       justify-content: center;
-  //       position: relative;
-  //       .el-carousel__container {
-  //           padding-top: 0px !important;
-  //           width: $minWidth !important;
-  //           height: 615px !important;
-  //           img {
-  //             width: 100%;
-  //             position: absolute;
-  //             top: 0;
-  //             left: 0;
-  //             height: auto !important;
-  //           }
-  //       }
-  //     }
-  //   }
-  //   .banner_text{
-
-  //   }
-  // }
 
   .grid-container{
     display: flex;
@@ -127,33 +109,7 @@ $minWidth:1650px;
   }
   
   .gridList{
-    width: 1440px !important;
-  }
-
-  .solution{
-    .banner_img{
-      width: 100%;
-      padding-top: 0px !important;
-      display: flex;
-      justify-content: center;
-      .banner_img-container{
-        width: $minWidth !important;
-        position: relative !important;
-      }
-      img {
-        position: relative !important;
-        width: $minWidth !important;
-        height: 615px !important;
-      }
-    }
-    .banner_text{
-     h4{
-      font-size: 56px !important;
-     }
-     p{
-      font-size: 28px !important;
-     }
-    }
+    width: $minWidth !important;
   }
 
   .products{
@@ -169,7 +125,7 @@ $minWidth:1650px;
       img {
         position: relative !important;
         width: $minWidth !important;
-        height: 615px !important;
+        height: 720px !important;
       }
     }
     .header_title{
@@ -207,63 +163,61 @@ $minWidth:1650px;
     width: $minWidth !important;
   }
 
+  .partners{
+    .partners_mid{
+      top: 32vw !important;
+    }
+  }
+
   // .details_header{
   //   width: $minWidth !important;
   // }
 }
 
-@media (min-width: 1800px) {
+// @media (min-width: 1440px) {
+//   .navlist{
+//     margin-left: 15% !important;
+//     margin-right: 15% !important;
+//   }
+// }
+
+@media (min-width: 1680px) {
   .navlist{
-    margin-left: 18% !important;
-    margin-right: 18% !important;
+    margin-right: 30vw !important;
   }
 }
 
-.productBox{
-  .textBox{
-    width: 50% !important;
-  }
-  .productImgBox_img{
-    width: 50% !important;
-    height: auto !important;
-  }
-}
+// .productBox{
+//   .textBox{
+//     width: 50% !important;
+//   }
+//   .productImgBox_img{
+//     width: 50% !important;
+//     height: auto !important;
+//   }
+// }
 
-.newBox_ul_li_tow{
-  width: 39.5rem !important;
-  .newBox_time_box_tow{
-    width: 40% !important;
-    flex: 0 0 auto !important;
-    justify-content: flex-end !important;
-  }
-  .newBox_time{
-    width: auto !important;
-  }
-}
+// .newBox_ul_li_tow{
+//   width: 39.5rem !important;
+//   .newBox_time_box_tow{
+//     width: 40% !important;
+//     flex: 0 0 auto !important;
+//     justify-content: flex-end !important;
+//   }
+//   .newBox_time{
+//     width: auto !important;
+//   }
+// }
 
-.product_container{
-  .textBox{
-    .characteristic_label_ul{
-      height: 120px !important;
-      overflow: hidden !important;
-    }
-  }
-}
+// .product_container{
+//   .textBox{
+//     .characteristic_label_ul{
+//       height: 120px !important;
+//       overflow: hidden !important;
+//     }
+//   }
+// }
 
-@media (max-width: 900px) {
-  .about{
-    height: calc(100vh - 100px);
-  }
-}
-
-@media (max-width: 1000px) {
-  .newsInfo{
-    height: calc(100vh - 100px);
-  }
-}
-
-@media (max-width: 800px) {
-  .products{
-    height: 100vh !important;
-  }
+.app-main{
+  min-height: max(100vh, 100vw) !important;
 }

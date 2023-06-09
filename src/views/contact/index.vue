@@ -16,7 +16,7 @@
             <p><img src="@/assets/contact/address@2x.png"><span>{{ item.address }}</span></p>
           </div>
         </div>
-        <div>
+        <div class="right_container">
           <baidu-map
             class="mid_right"
             ak="K6RuD91GxkoGBmrR3KH3sAH3eLRIFO10"

@@ -133,7 +133,7 @@ export default {
       }
       this.menuTitle = item.title
       if (item.path) {
-        this.$router.push(item.path)
+        this.$router.push({ path: item.path, query: { id: item.id }})
       }
     },
     dropDownVisibleChange(visiable) {
