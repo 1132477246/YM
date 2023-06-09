@@ -154,7 +154,7 @@ export default {
   components: { Title },
   data() {
     return {
-      autoplayState: true,
+      autoplayState: false,
       listQuery: {
         pagenum: 1,
         pagesize: 10
