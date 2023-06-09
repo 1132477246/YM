@@ -27,7 +27,7 @@
           </div>
           <div class="contentBox">
             <div class="title oneHidden">{{ item.title }}</div>
-            <div class="content moreHidden moreHidden_3">
+            <div class="content moreHidden moreHidden_3 overflowHidden">
               {{ item.content }}
             </div>
           </div>
@@ -165,7 +165,7 @@ export default {
           id: '1',
           title: '信号分析解决方案',
           content:
-            '这里是简单的文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时,展示全部内容',
+            '这里是简单的这里是里是简单的文字介绍，最多不超过3行，超出用简单的文字介绍，最多不超过3行，超出用..里是简单的文字介绍，最多不超过3行，超出用..里是简单的文字介绍，最多不超过3行，超出用..简单的文字介绍，最多不超过3行，超出用...表示。这里是简单的文字介绍，最多不超过3行，超出用...表示。这里是简单的文字介绍，最多不超过3行，超出用...表示。文字介绍，最多不超过3行，超出用...表示。鼠标悬停在该卡片区域时,展示全部内容',
           img: require('@/assets/img/solutionone.png')
 
         },
@@ -185,18 +185,7 @@ export default {
         }
       ],
       bannerObj: [
-        // {
-        //   id: '1',
-        //   img: require('@/assets/img/banner.png')
-        // },
-        // {
-        //   id: '2',
-        //   img: require('@/assets/img/banner.png')
-        // },
-        // {
-        //   id: '3',
-        //   img: require('@/assets/img/banner.png')
-        // }
+
       ],
       productImgBannerObj: [
         {
